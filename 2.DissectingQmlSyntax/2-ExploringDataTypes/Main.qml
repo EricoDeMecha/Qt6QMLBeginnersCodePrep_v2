@@ -15,9 +15,9 @@ Window {
     property double mDouble: 77.5
     property url mUrl: "https://www.learnqt.guide"
 
-    property var aNumber: 100
-    property var aBool: false
-    property var aString: "Hello world!"
+    property var aNumber: 100 // not-recommended (use int or real to better performance)
+    property var aBool: false // same-case
+    property var aString: "Hello world!" // similar  case
     property var anotherString: String("#FF008800")
     property var aColor: Qt.rgba(0.2, 0.3, 0.4, 0.5)
     property var aRect: Qt.rect(10, 10, 10, 10)
