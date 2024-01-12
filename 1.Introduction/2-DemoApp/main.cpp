@@ -14,27 +14,10 @@ int main(int argc, char *argv[])
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
         &app, []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.loadFromModule("DemoApp", "Main");
+    engine.loadFromModule("DemoApp", "Main");/**
+                                                - naming convention matter(https://doc.qt.io/qt-6/qtqml-documents-definetypes.html)
+                                                - Expect a typeName starting with Capital letter i.e Main.qml not main.qml
+                                             **/
 
     return app.exec();
-
-
-    /*
-    QGuiApplication app(argc, argv);
-
-    QQmlApplicationEngine engine;
-    const QUrl url(u"qrc:/1-DemoApp/main.qml"_qs);
-
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        qDebug() << "url : " << url;
-        qDebug() << "objUrl : " << objUrl;
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-
-    engine.load(url);
-
-    return app.exec();
-    */
 }
