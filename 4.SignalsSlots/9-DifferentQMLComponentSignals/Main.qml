@@ -9,7 +9,7 @@ Window {
     height: 480
     title: qsTr("External Components with signals and slots")
 
-    Notifier{
+    Notifier {
         id: notifierId
         rectColor: "yellowgreen"
         target: receiverId
