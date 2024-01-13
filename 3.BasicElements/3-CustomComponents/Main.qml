@@ -54,7 +54,6 @@ Window {
     }
     */
 
-
     /*
     MButton {
         id: button1
@@ -71,17 +70,14 @@ Window {
         MButton {
             buttonText: "Button1"
             onButtonClicked: {
-                console.log("Clicked on button1")
+                console.log("Clicked on button1");
             }
-
         }
         MButton {
             buttonText: "Button2"
             onButtonClicked: {
-                console.log("clicked on button2")
+                console.log("clicked on button2");
             }
         }
     }
-
 }
-

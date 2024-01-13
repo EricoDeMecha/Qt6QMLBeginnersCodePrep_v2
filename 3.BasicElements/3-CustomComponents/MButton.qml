@@ -15,14 +15,17 @@ Item {
         width: buttonTextId.implicitWidth + 20
         height: buttonTextId.implicitHeight + 20
         color: "red"
-        border { color: "blue"; width : 3}
+        border {
+            color: "blue"
+            width: 3
+        }
 
         Text {
             id: buttonTextId
             text: "Button"
             anchors.centerIn: parent
             onTextChanged: {
-                console.log("Text changed to "+ buttonTextId.text)
+                console.log("Text changed to " + buttonTextId.text);
             }
         }
 
@@ -30,25 +33,8 @@ Item {
             anchors.fill: parent
             onClicked: {
                 //console.log("Clicked on :"+ buttonTextId.text)
-                rootId.buttonClicked()
+                rootId.buttonClicked();
             }
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
