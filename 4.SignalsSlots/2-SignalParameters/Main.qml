@@ -9,13 +9,13 @@ Window {
     visible: true
     title: qsTr("Signal Parameters")
 
-    Rectangle{
+    Rectangle {
         id: rect
         width: 150
         height: 150
         color: "red"
 
-        MouseArea{
+        MouseArea {
             anchors.fill: parent
 
             /*
@@ -32,9 +32,8 @@ Window {
             }
             */
 
-             //Arrow function
-             onClicked: (mouse_param) => console.log(mouse_param.x)
-
+            //Arrow function
+            onClicked: mouse_param => console.log(mouse_param.x)
         }
     }
 }
