@@ -9,7 +9,7 @@ Window {
     height: 480
     title: qsTr("Qt Global Object Demo")
 
-    property var fonts: Qt.fontFamilies()
+    readonly property var fonts: Qt.fontFamilies()
 
     Rectangle {
         width: 300
