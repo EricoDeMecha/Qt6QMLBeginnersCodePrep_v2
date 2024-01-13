@@ -9,11 +9,11 @@ Window {
     visible: true
     title: qsTr("Multiple Signal Parameters")
 
-    signal info(string last_name,string first_name,int age)
+    signal info(string last_name, string first_name, int age)
 
     //Handle all three parameters
-    onInfo: function(l,f,a){
-        print("last name: " + l + ", first name: " + f +", age: "+ a)
+    onInfo: function (l, f, a) {
+        print("last name: " + l + ", first name: " + f + ", age: " + a);
     }
 
     //Only handle the first two
@@ -40,16 +40,16 @@ Window {
         print(" first name: " + f +", age: "+ a)
     }
     */
-    Rectangle{
+    Rectangle {
         id: rectId
-        width: 300;
+        width: 300
         height: 300
         color: "blue"
 
-        MouseArea{
+        MouseArea {
             anchors.fill: parent
             onClicked: {
-                info("John", "Snow", 33)
+                info("John", "Snow", 33);
             }
         }
     }
