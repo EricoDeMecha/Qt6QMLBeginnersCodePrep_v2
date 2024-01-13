@@ -9,7 +9,7 @@ Window {
     visible: true
     title: qsTr("Custom Signals")
 
-    Rectangle{
+    Rectangle {
         id: rectId
         width: 300
         height: 300
@@ -22,24 +22,23 @@ Window {
 
         //We want to connect, not to a build in signal handler, but to a custom
         //regular function
-        function respond_your_way(message){
-            console.log("Responding our way;Greeting with message: "+message)
+        function respond_your_way(message) {
+            console.log("Responding our way;Greeting with message: " + message);
         }
 
-        MouseArea{
+        MouseArea {
             anchors.fill: parent
             onClicked: {
                 //Fire the signal by just calling it like a function
-                rectId.greet("The sky is blue")
+                rectId.greet("The sky is blue from greet()");// goes through forward greeting
+                rectId.forward_greeting("The sky is blue from forward_greeting()"); // goes directly to respond_your_way slot
             }
         }
         Component.onCompleted: {
             //Connect a signal to another signal
-            rectId.greet.connect(rectId.forward_greeting)
+            rectId.greet.connect(rectId.forward_greeting);
             //Respond to the final signal
-            rectId.forward_greeting.connect(rectId.respond_your_way)
+            rectId.forward_greeting.connect(rectId.respond_your_way);
         }
-
-
     }
 }
