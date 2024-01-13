@@ -9,7 +9,8 @@ Window {
     visible: true
     title: qsTr("Multiple Signal Parameters")
 
-    signal info(string last_name, string first_name, int age)
+    signal info(string last_name, string first_name, string age)
+    // signal info(var last_name, var first_name, var age) // un-typed can also do(lol js)(not recommended)
 
     //Handle all three parameters
     onInfo: function (l, f, a) {
