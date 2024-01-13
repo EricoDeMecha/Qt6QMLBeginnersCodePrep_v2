@@ -9,14 +9,17 @@ Window {
     visible: true
     title: qsTr("Attached signal handlers")
 
-    Rectangle{
-        width : 200
+    Rectangle {
+        width: 200
         height: 200
-        color : "green"
+        color: "green"
         anchors.left: parent.left
 
         Component.onCompleted: {
-            console.log("Finished setting up the rectangle")
+            console.log("Finished setting up the rectangle");
+        }
+        Component.onDestruction: {
+            console.log("Component destruction started");
         }
     }
 }
