@@ -9,7 +9,7 @@ Window {
     visible: true
     title: qsTr("Connect Signal to Method")
 
-    Rectangle{
+    Rectangle {
         id: rectId
         width: 300
         height: 300
@@ -28,20 +28,20 @@ Window {
 
         //We want to connect, not to a built in signal handler, but to a custom
         //regular function
-        function respond_your_way(message){
-            console.log("Responding our way; greeting with message: "+ message)
+        function respond_your_way(message) {
+            console.log("Responding our way; greeting with message: " + message);
         }
 
-        MouseArea{
+        MouseArea {
             anchors.fill: parent
             onClicked: {
                 //Fire the signal by just calling it like a function
-                rectId.greet("The sky is blue")
+                rectId.greet("The sky is blue");
             }
         }
         Component.onCompleted: {
             //Make the connection explicitly
-            rectId.greet.connect(rectId.respond_your_way)
+            rectId.greet.connect(rectId.respond_your_way);
         }
     }
 }
