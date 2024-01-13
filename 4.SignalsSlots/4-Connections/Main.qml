@@ -3,31 +3,32 @@
 
 import QtQuick
 import QtQml
+
 Window {
     width: 640
     height: 480
     visible: true
     title: qsTr("Connections")
 
-    Rectangle{
+    Rectangle {
         id: rectId
-        width : 200
+        width: 200
         height: 200
         color: "blue"
 
-        MouseArea{
-            id:mouseAreaId
+        MouseArea {
+            id: mouseAreaId
             anchors.fill: parent
         }
     }
 
-    Connections  {
-        target : mouseAreaId
-        function onClicked(){
-            console.log("Hello")
+    Connections {
+        target: mouseAreaId
+        function onClicked() {
+            console.log("Hello");
         }
-        function onDoubleClicked(mouse){
-            console.log("Doubleclicked at: "+mouse.x)
+        function onDoubleClicked(mouse) {
+            console.log("Doubleclicked at: " + mouse.x);
         }
     }
 }
