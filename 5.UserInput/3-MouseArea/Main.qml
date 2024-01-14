@@ -20,37 +20,33 @@ Window {
             width: 50
             height: width
             color: "blue"
-
-
         }
 
-        MouseArea{
+        MouseArea {
             anchors.fill: parent
-            onClicked: function(mouse) {
-                console.log(mouse.x)
-                movingRectId.x =  mouse.x
+            onClicked: function (mouse) {
+                console.log(mouse.x);
+                movingRectId.x = mouse.x;
             }
 
-            onWheel:function(wheel) {
-                console.log(" x: "+ wheel.x + ", y: "+ wheel.y + ", angleData: "+ wheel.angleDelta)
+            onWheel: function (wheel) {
+                console.log(" x: " + wheel.x + ", y: " + wheel.y + ", angleData: " + wheel.angleDelta);
             }
 
             hoverEnabled: true
             onHoveredChanged: {
-                if (containsMouse)
-                {
-                    containerRectId.color = "red"
-                }else {
-                    containerRectId.color = "green"
+                if (containsMouse) {
+                    containerRectId.color = "red";
+                } else {
+                    containerRectId.color = "green";
                 }
             }
         }
     }
 
-
     Rectangle {
         id: dragContainerId
-        width : parent.width
+        width: parent.width
         height: 200
         color: "beige"
         y: 250
@@ -62,17 +58,16 @@ Window {
             color: "blue"
 
             onXChanged: {
-                console.log("x coordinate is: "+ x)
+                console.log("x coordinate is: " + x);
             }
         }
 
-        MouseArea{
+        MouseArea {
             anchors.fill: parent
             drag.target: draggableRect
             drag.axis: Drag.XAxis
             drag.minimumX: 0
             drag.maximumX: dragContainerId.width - draggableRect.width
-
         }
     }
 }
