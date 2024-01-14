@@ -12,13 +12,16 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(app5-Positioning
-    main.cpp resource.qrc
+    main.cpp
 )
 
 qt_add_qml_module(app5-Positioning
     URI 5-Positioning
     VERSION 1.0
     QML_FILES Main.qml
+    RESOURCES
+        images/LearnQt.png
+    RESOURCE_PREFIX /
 )
 
 set_target_properties(app5-Positioning PROPERTIES
