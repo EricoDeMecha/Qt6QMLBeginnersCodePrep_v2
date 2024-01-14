@@ -11,9 +11,9 @@ Window {
     height: 480
     title: qsTr("ComboBox")
 
-    ColumnLayout{
+    ColumnLayout {
         width: parent.width
-        height:parent.height
+        height: parent.height
 
         //Non Editable ComboBox
 
@@ -30,13 +30,10 @@ Window {
             model: ["One", "Two", "Three", "Four"]
             //anchors.horizontalCenter: parent.horizontalCenter
             onActivated: {
-                console.log("[" + currentIndex +"] " + currentText + " is activated")
+                console.log("[" + currentIndex + "] " + currentText + " is activated");
             }
             Layout.fillWidth: true
-
         }
-
-
 
         //Editable ComboBox
         Label {
@@ -48,41 +45,51 @@ Window {
         ComboBox {
             id: editableComboId
             editable: true
-            textRole : "text"
+            textRole: "text"
             Layout.fillWidth: true
             model: ListModel {
-                id : model
-                ListElement { text: "Dog"; location:"Kigali" }
-                ListElement { text: "Chicken"; location : "Beijing" }
-                ListElement { text: "Cat" ; location : "Mumbai" }
-                ListElement { text: "Meerkat" ; location : "Paris" }
+                id: model
+                ListElement {
+                    text: "Dog"
+                    location: "Kigali"
+                }
+                ListElement {
+                    text: "Chicken"
+                    location: "Beijing"
+                }
+                ListElement {
+                    text: "Cat"
+                    location: "Mumbai"
+                }
+                ListElement {
+                    text: "Meerkat"
+                    location: "Paris"
+                }
             }
 
-
             onActivated: {
-                console.log("[" + currentIndex +"] " + currentText + " is activated")
+                console.log("[" + currentIndex + "] " + currentText + " is activated");
             }
 
             onAccepted: {
-                if ( find(editText) === -1)
-                {
-                    model.append({text : editText , location : "US"})
+                if (find(editText) === -1) {
+                    model.append({
+                            text: editText,
+                            location: "US"
+                        });
                 }
             }
         }
 
-
-
-        Button{
-            text : "Capture current element"
+        Button {
+            text: "Capture current element"
             Layout.fillWidth: true
             onClicked: {
-                console.log("["  + model.get(editableComboId.currentIndex).text   +"]: " +
-                             model.get(editableComboId.currentIndex).location)
+                console.log("[" + model.get(editableComboId.currentIndex).text + "]: " + model.get(editableComboId.currentIndex).location);
             }
         }
 
-        Item{
+        Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
         }
