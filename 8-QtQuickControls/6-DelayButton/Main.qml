@@ -30,22 +30,20 @@ Window {
             delay: 1000
 
             onPressed: {
-                if(activated === true)
-                {
-                    console.log("Button is Clicked. Carrying out the task")
+                if (activated === true) {
+                    console.log("Button is Clicked. Carrying out the task");
                     activated = false;
                 }
             }
 
             onActivated: {
-                console.log("Button Activated")
-                activated = true
+                console.log("Button Activated");
+                activated = true;
             }
 
-            onProgressChanged:{
-                console.log(progress)
+            onProgressChanged: {
+                console.log(progress);
             }
         }
-
     }
 }
