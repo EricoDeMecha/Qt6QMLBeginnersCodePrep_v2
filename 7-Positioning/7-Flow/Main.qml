@@ -12,7 +12,7 @@ Window {
 
     Flow {
         id: containerFlowId
-        width : parent.width
+        width: parent.width
         height: parent.height
 
         flow: Flow.TopToBottom
@@ -20,10 +20,9 @@ Window {
 
         //spacing: 20
 
-
         Rectangle {
             id: topLeftRectId
-            width : 70
+            width: 70
             height: 70
             color: "green"
             Text {
@@ -36,7 +35,7 @@ Window {
 
         Rectangle {
             id: topCenterRectId
-            width : 100
+            width: 100
             height: 100
             color: "beige"
             Text {
@@ -49,7 +48,7 @@ Window {
 
         Rectangle {
             id: topRightRectId
-            width : 100
+            width: 100
             height: 100
             color: "dodgerblue"
             Text {
@@ -62,7 +61,7 @@ Window {
 
         Rectangle {
             id: leftCenterRectId
-            width : 100
+            width: 100
             height: 100
             color: "magenta"
             Text {
@@ -75,7 +74,7 @@ Window {
 
         Rectangle {
             id: centerRectId
-            width : 100
+            width: 100
             height: 100
             color: "red"
             Text {
@@ -87,7 +86,7 @@ Window {
         }
         Rectangle {
             id: rightCenterId
-            width : 100
+            width: 100
             height: 100
             color: "yellow"
             Text {
@@ -100,7 +99,7 @@ Window {
 
         Rectangle {
             id: bottomLeftRectId
-            width : 100
+            width: 100
             height: 100
             color: "royalblue"
             Text {
@@ -113,7 +112,7 @@ Window {
 
         Rectangle {
             id: bottomCenterRect
-            width : 100
+            width: 100
             height: 100
             color: "greenyellow"
             Text {
@@ -126,7 +125,7 @@ Window {
 
         Rectangle {
             id: bottomRightRectId
-            width : 100
+            width: 100
             height: 100
             color: "blue"
             Text {
