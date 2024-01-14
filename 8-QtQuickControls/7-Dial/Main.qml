@@ -22,7 +22,7 @@ Window {
             font.pointSize: 15
         }
 
-        Dial{
+        Dial {
             anchors.horizontalCenter: parent.horizontalCenter
             from: 1
             to: 100
@@ -30,10 +30,10 @@ Window {
             wrap: true
 
             onValueChanged: {
-                console.log(" Current value: " + Math.ceil(value))
+                console.log(" Current value: " + Math.ceil(value));
             }
-
         }
+        // Resource: https://doc.qt.io/qt-6/qtquickcontrols-customize.html#customizing-dial
 
     }
 }
