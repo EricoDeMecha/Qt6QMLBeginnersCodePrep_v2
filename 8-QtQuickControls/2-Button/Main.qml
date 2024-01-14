@@ -20,15 +20,15 @@ Window {
             text: "Button1"
             Layout.fillWidth: true
             onClicked: {
-                console.log("Clicked on button1")
+                console.log("Clicked on button1");
             }
         }
-        Button{
+        Button {
             id: button2
-            text : "Button2"
+            text: "Button2"
             Layout.fillWidth: true
             onClicked: {
-                console.log("Clicked on button2")
+                console.log("Clicked on button2");
             }
         }
     }
