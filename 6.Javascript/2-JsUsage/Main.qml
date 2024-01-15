@@ -17,22 +17,30 @@ Window {
 
         //JS in signal handler
         onXChanged: {
-            console.log("Current value of x: "+ x)
+            console.log("Current value of x: " + x + ", y:" + y);
         }
 
         //Custom function
-        function getHeight()
-        {
-            return  height * 2
+        function getHeight(): real {
+            return height * 2;
         }
     }
 
     MouseArea {
         anchors.fill: parent
         drag.target: containerRectId
-        drag.axis: Drag.XAxis
+        drag.axis: Drag.XAndYAxis
         drag.minimumX: 0
         drag.maximumX: parent.width - containerRectId.width
-
+        drag.minimumY: 0
+        drag.maximumY: parent.height - containerRectId.height
     }
+    // MouseArea {
+    //     anchors.fill: parent
+    //     drag.target: containerRectId
+    //     drag.axis: Drag.YAxis
+    //     drag.minimumY: 0
+    //     drag.maximumY: parent.heigh - containerRectId.height
+
+    // }
 }

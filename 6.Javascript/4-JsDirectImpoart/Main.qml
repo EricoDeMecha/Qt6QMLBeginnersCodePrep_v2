@@ -4,7 +4,6 @@
 import QtQuick
 import "utilities1.js" as Utilities1
 
-
 Window {
     visible: true
     width: 640
@@ -25,8 +24,8 @@ Window {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-               //console.log("Hello there")
-               Utilities1.greeting()
+                //console.log("Hello there")
+                Utilities1.greeting();
             }
         }
     }
