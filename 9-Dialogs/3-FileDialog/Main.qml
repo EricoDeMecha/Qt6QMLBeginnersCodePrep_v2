@@ -5,7 +5,6 @@ import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Dialogs
 
-
 Window {
     visible: true
     width: 640
@@ -16,11 +15,11 @@ Window {
         spacing: 20
         anchors.centerIn: parent
 
-        Button{
+        Button {
             text: "Choose File"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
-                fileDialogId.open()
+                fileDialogId.open();
             }
         }
 
@@ -30,41 +29,46 @@ Window {
             wrapMode: Text.Wrap
         }
 
-        FileDialog{
+        FileDialog {
             id: fileDialogId
             title: "Choose File"
             nameFilters: ["Text files (*.txt)", "HTML files (*.html *.htm)", "Images (*.jpg *.png)"]
-
+            fileMode: FileDialog.OpenFiles	// allow for selecting multiple files
             onAccepted: {
-                textId.text = selectedFile
+                textId.text = currentFile;
             }
 
             onRejected: {
-                textId.text = "Dialog rejected"
+                textId.text = "Dialog rejected";
+            }
+        }
+
+        Button {
+            text: "Choose Multiple File"
+            anchors.horizontalCenter: parent.horizontalCenter
+            onClicked: {
+                multipleFileDialogId.open();
+            }
+        }
+
+        Text {
+            id: multipleTextId
+            text: "Use hasn't chosen yet"
+            wrapMode: Text.Wrap
+        }
+
+        FileDialog {
+            id: multipleFileDialogId
+            title: "Choose Multiple Files"
+            nameFilters: ["Text files (*.txt)", "HTML files (*.html *.htm)", "Images (*.jpg *.png)"]
+            fileMode: FileDialog.OpenFiles	// allow for selecting multiple files
+            onAccepted: {
+                multipleTextId.text = currentFiles.join('\n');
+            }
+
+            onRejected: {
+                multipleTextId.text = "Dialog rejected";
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
