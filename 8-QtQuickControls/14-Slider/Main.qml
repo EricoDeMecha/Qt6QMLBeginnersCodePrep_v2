@@ -21,18 +21,17 @@ Window {
             to: 100
             value: 40
             onValueChanged: {
-                progressBarId.value = value
+                progressBarId.value = value;
             }
         }
 
         ProgressBar {
+            id: progressBarId
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width
-            id: progressBarId
-            from : 1
+            from: 1
             to: 100
             value: 40
-
         }
     }
 }
