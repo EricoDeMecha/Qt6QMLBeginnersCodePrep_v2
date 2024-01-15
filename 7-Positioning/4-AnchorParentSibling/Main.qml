@@ -24,16 +24,14 @@ Window {
 
             //This anchor won't work because siblingRect isn't either a ibling or a parent
             anchors.top: siblingRect.bottom
-        }  
+        }
     }
 
     Rectangle {
         id: siblingRect
         width: 200
         height: 200
-        color : "black"
+        color: "black"
         anchors.right: containerRectId.left
     }
-
-
 }

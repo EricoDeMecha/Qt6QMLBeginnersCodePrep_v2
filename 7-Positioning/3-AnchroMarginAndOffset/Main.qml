@@ -22,7 +22,7 @@ Window {
             width: 100
             height: width
             color: "magenta"
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "1"
                 font.pointSize: 20
@@ -35,7 +35,7 @@ Window {
             height: width
             color: "yellowgreen"
             anchors.left: topLeftRectId.right
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "2"
                 font.pointSize: 20
@@ -48,7 +48,7 @@ Window {
             height: width
             color: "dodgerblue"
             anchors.left: topCenterRectId.right
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "3"
                 font.pointSize: 20
@@ -61,7 +61,7 @@ Window {
             height: width
             color: "red"
             anchors.top: topLeftRectId.bottom
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "4"
                 font.pointSize: 20
@@ -95,7 +95,7 @@ Window {
             anchors.horizontalCenterOffset: -10
             anchors.verticalCenterOffset: 10
 
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "5"
                 font.pointSize: 20
@@ -108,13 +108,12 @@ Window {
             color: "blue"
             anchors.left: centerCenterRectId.right
             anchors.top: topRightRectId.bottom
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "6"
                 font.pointSize: 20
             }
         }
-
 
         //The bottom row will be positioned in terms of centerCenterRectId
         Rectangle {
@@ -124,12 +123,11 @@ Window {
             color: "royalblue"
             anchors.right: centerCenterRectId.left
             anchors.top: centerCenterRectId.bottom
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "7"
                 font.pointSize: 20
             }
-
         }
         Rectangle {
             id: bottomCenterRectId
@@ -138,7 +136,7 @@ Window {
             color: "yellow"
             anchors.left: centerCenterRectId.left
             anchors.top: centerCenterRectId.bottom
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "8"
                 font.pointSize: 20
@@ -152,7 +150,7 @@ Window {
             color: "pink"
             anchors.left: centerCenterRectId.right
             anchors.top: centerCenterRectId.bottom
-            Text{
+            Text {
                 anchors.centerIn: parent
                 text: "9"
                 font.pointSize: 20

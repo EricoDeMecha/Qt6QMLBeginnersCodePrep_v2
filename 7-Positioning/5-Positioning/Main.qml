@@ -12,8 +12,9 @@ Window {
     Grid {
         columns: 2
         spacing: 10
-//        rowSpacing: 10
-//        columnSpacing: 10
+
+        //        rowSpacing: 10
+        //        columnSpacing: 10
 
         horizontalItemAlignment: Grid.AlignRight
         verticalItemAlignment: Grid.AlignVCenter
@@ -26,7 +27,11 @@ Window {
             width: 60
             height: width
             color: "magenta"
-            Text{text: "1"; anchors.centerIn: parent; font.pointSize: 20}
+            Text {
+                text: "1"
+                anchors.centerIn: parent
+                font.pointSize: 20
+            }
         }
 
         Rectangle {
@@ -34,7 +39,11 @@ Window {
             width: 100
             height: width
             color: "yellowgreen"
-            Text{text: "2"; anchors.centerIn: parent; font.pointSize: 20}
+            Text {
+                text: "2"
+                anchors.centerIn: parent
+                font.pointSize: 20
+            }
         }
 
         Rectangle {
@@ -42,8 +51,11 @@ Window {
             width: 100
             height: width
             color: "dodgerblue"
-            Text{text: "3"; anchors.centerIn: parent; font.pointSize: 20}
-
+            Text {
+                text: "3"
+                anchors.centerIn: parent
+                font.pointSize: 20
+            }
         }
 
         Rectangle {
@@ -51,9 +63,11 @@ Window {
             width: 100
             height: width
             color: "beige"
-            Text{text: "4"; anchors.centerIn: parent; font.pointSize: 20}
-
+            Text {
+                text: "4"
+                anchors.centerIn: parent
+                font.pointSize: 20
+            }
         }
-
     }
 }
