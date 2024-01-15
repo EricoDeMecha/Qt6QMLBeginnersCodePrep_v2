@@ -19,7 +19,7 @@ Window {
             width: 300
 
             Label {
-                width:  100
+                width: 100
                 height: 50
                 wrapMode: Label.Wrap
                 horizontalAlignment: Qt.AlignHCenter
@@ -28,22 +28,21 @@ Window {
             }
 
             TextField {
-                id : textFieldId
+                id: textFieldId
                 width: 200
                 height: 50
                 placeholderText: "Type your First Name"
                 onEditingFinished: {
-                    console.log("Text Edit Finished : "+ text)
+                    console.log("Text Edit Finished : " + text);
                 }
             }
         }
 
-        Button{
-            text : "Click"
+        Button {
+            text: "Click"
             onClicked: {
-                console.log("Text is :"+ textFieldId.text)
+                console.log("Text is :" + textFieldId.text);
             }
-
         }
     }
 }
