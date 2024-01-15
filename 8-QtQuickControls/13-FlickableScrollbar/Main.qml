@@ -10,14 +10,13 @@ Window {
     height: 480
     title: qsTr("Flickable and Scrollbar")
 
-    Flickable{
+    Flickable {
 
         width: parent.width
         height: parent.height
         contentHeight: mColumnId.implicitHeight
 
-
-        Column{
+        Column {
             id: mColumnId
             anchors.fill: parent
 
@@ -32,7 +31,6 @@ Window {
                     color: "white"
                 }
             }
-
 
             Rectangle {
                 color: "blue"
@@ -116,10 +114,9 @@ Window {
             }
             */
 
-
-
         }
 
-        ScrollBar.vertical: ScrollBar{}
+        ScrollBar.vertical: ScrollBar {
+        }
     }
 }
