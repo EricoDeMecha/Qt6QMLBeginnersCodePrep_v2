@@ -13,8 +13,15 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(app7-CustomDialog
-    main.cpp resource.qrc
+    main.cpp
 )
+
+qt_add_resources(app7-CustomDialog "qml"
+      PREFIX /
+      FILES
+          Main.qml
+          images/LearnQtLogo.png
+  )
 
 qt_add_qml_module(app7-CustomDialog
     URI 7-CustomDialog

@@ -14,18 +14,15 @@ Window {
 
     readonly property int buttonWidth: 300
 
-
     Column {
         spacing: 20
-        width:parent.width
-
+        width: parent.width
 
         Label {
             width: parent.width
             wrapMode: Label.Wrap
             horizontalAlignment: Qt.AlignHCenter
-            text: "Dialog is a popup that is mostly used for short-term tasks "
-                + "and brief communications with the user."
+            text: "Dialog is a popup that is mostly used for short-term tasks " + "and brief communications with the user."
         }
 
         Button {
@@ -47,9 +44,6 @@ Window {
                 }
             }
         }
-
-
-
 
         Button {
             id: button
@@ -83,9 +77,6 @@ Window {
             }
         }
 
-
-
-
         Button {
             text: "Content"
             anchors.horizontalCenter: parent.horizontalCenter
@@ -99,7 +90,7 @@ Window {
                 y: (parent.height - height) / 2
                 width: Math.min(parent.width, parent.height) / 3 * 2
                 //contentHeight: logo.height * 2 // This causes a binding loop
-                contentHeight: parent.height/2 // This doesn't cause the binding loop.
+                contentHeight: parent.height / 2 // This doesn't cause the binding loop.
                 parent: Overlay.overlay
 
                 modal: true
@@ -127,13 +118,7 @@ Window {
 
                         Label {
                             width: parent.width
-                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus "
-                                + "in est quis laoreet. Interdum et malesuada fames ac ante ipsum primis "
-                                + "in faucibus. Curabitur eget justo sollicitudin enim faucibus bibendum. "
-                                + "Suspendisse potenti. Vestibulum cursus consequat mauris id sollicitudin. "
-                                + "Duis facilisis hendrerit consectetur. Curabitur sapien tortor, efficitur "
-                                + "id auctor nec, efficitur et nisl. Ut venenatis eros in nunc placerat, "
-                                + "eu aliquam enim suscipit."
+                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus " + "in est quis laoreet. Interdum et malesuada fames ac ante ipsum primis " + "in faucibus. Curabitur eget justo sollicitudin enim faucibus bibendum. " + "Suspendisse potenti. Vestibulum cursus consequat mauris id sollicitudin. " + "Duis facilisis hendrerit consectetur. Curabitur sapien tortor, efficitur " + "id auctor nec, efficitur et nisl. Ut venenatis eros in nunc placerat, " + "eu aliquam enim suscipit."
                             wrapMode: Label.Wrap
                         }
                     }
@@ -148,9 +133,6 @@ Window {
                 }
             }
         }
-
-
-
 
         Button {
             text: "Input"
@@ -191,6 +173,5 @@ Window {
                 }
             }
         }
-
     }
 }
