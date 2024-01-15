@@ -13,13 +13,18 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(app16-PageTabBar
-    main.cpp resource.qrc
+    main.cpp
 )
 
 qt_add_qml_module(app16-PageTabBar
     URI 16-PageTabBar
     VERSION 1.0
     QML_FILES Main.qml
+    RESOURCES
+        images/1.png
+        images/2.png
+        images/3.png
+    RESOURCE_PREFIX /
 )
 
 set_target_properties(app16-PageTabBar PROPERTIES

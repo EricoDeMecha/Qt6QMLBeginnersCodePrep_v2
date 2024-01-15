@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Controls.Material
 
 ApplicationWindow {
     visible: true
@@ -10,64 +11,79 @@ ApplicationWindow {
     height: 480
     title: qsTr("ApplicationWindow Demo")
 
+    Material.theme: Material.Dark
+    Material.accent: Material.Purple
+
     menuBar: MenuBar {
         Menu {
             title: qsTr("&File")
             Action {
                 id: newActionId
                 text: qsTr("&New")
-                icon.source: "qrc:/images/newFileIcon.png"
+                icon.source: "images/newFileIcon.png"
                 onTriggered: {
-                    console.log("Clicked on new")
+                    console.log("Clicked on new");
                 }
             }
-
 
             Action {
                 id: openActionId
                 text: qsTr("&Open...")
-                icon.source: "qrc:/images/openIcon.png"
-
+                icon.source: "images/openIcon.png"
             }
             Action {
                 id: saveActionId
                 text: qsTr("&Save")
-                icon.source: "qrc:/images/saveIcon.png"
+                icon.source: "images/saveIcon.png"
             }
             Action {
                 id: saveAsActionId
                 text: qsTr("Save &As...")
-                icon.source: "qrc:/images/saveAsIcon.png"
+                icon.source: "images/saveAsIcon.png"
             }
 
-            MenuSeparator{}
+            MenuSeparator {
+            }
             Action {
                 id: quitActionId
                 text: qsTr("Quit")
-                icon.source: "qrc:/images/quitIcon.png"
+                icon.source: "images/quitIcon.png"
                 onTriggered: Qt.quit()
-
             }
         }
 
         Menu {
             title: qsTr("&Edit")
-            Action {id: cutMenuId; icon.source: "qrc:/images/cutIcon.png"; text: qsTr("Cut") }
+            Action {
+                id: cutMenuId
+                icon.source: "images/cutIcon.png"
+                text: qsTr("Cut")
+            }
             Action {
                 text: qsTr("Copy")
-                icon.source: "qrc:/images/copyIcon.png"
+                icon.source: "images/copyIcon.png"
             }
-            Action { text: qsTr("Paste") ; icon.source: "qrc:/images/pasteIcon.png"}
-            MenuSeparator { }
-            Action { text: qsTr("Undo"); icon.source: "qrc:/images/undoIcon.png" }
-            Action { text: qsTr("Redo") ; icon.source: "qrc:/images/redoIcon.png"}
+            Action {
+                text: qsTr("Paste")
+                icon.source: "images/pasteIcon.png"
+            }
+            MenuSeparator {
+            }
+            Action {
+                text: qsTr("Undo")
+                icon.source: "images/undoIcon.png"
+            }
+            Action {
+                text: qsTr("Redo")
+                icon.source: "images/redoIcon.png"
+            }
         }
         Menu {
             id: helpMenu
             title: qsTr("&Help")
             Action {
                 text: qsTr("&About")
-                icon.source: "qrc:/images/info.png"
+                icon.source: "images/info.png"
             }
         }
     }
@@ -75,16 +91,16 @@ ApplicationWindow {
     header: ToolBar {
         Row {
             anchors.fill: parent
-            ToolButton{
+            ToolButton {
                 action: newActionId
             }
-            ToolButton{
+            ToolButton {
                 action: saveActionId
             }
-            ToolButton{
+            ToolButton {
                 action: saveAsActionId
             }
-            ToolButton{
+            ToolButton {
                 action: quitActionId
             }
         }
@@ -95,37 +111,36 @@ ApplicationWindow {
         width: parent.width
 
         TabButton {
-            text : qsTr("Page1")
+            text: qsTr("Page1")
             onClicked: {
-                mStackId.pop()
-                mStackId.push("Page1.qml")
-                console.log("Number of items : " + mStackId.depth)
+                mStackId.pop();
+                mStackId.push("Page1.qml");
+                console.log("Number of items : " + mStackId.depth);
             }
         }
         TabButton {
-            text : qsTr("Page2")
+            text: qsTr("Page2")
             onClicked: {
-                mStackId.pop()
-                mStackId.push("Page2.qml")
-                console.log("Number of items : " + mStackId.depth)
+                mStackId.pop();
+                mStackId.push("Page2.qml");
+                console.log("Number of items : " + mStackId.depth);
             }
         }
         TabButton {
-            text : qsTr("Page3")
+            text: qsTr("Page3")
             onClicked: {
-                mStackId.pop()
-                mStackId.push("Page3.qml")
-                console.log("Number of items : " + mStackId.depth)
+                mStackId.pop();
+                mStackId.push("Page3.qml");
+                console.log("Number of items : " + mStackId.depth);
             }
         }
     }
 
     //Main Content
     StackView {
-        id : mStackId
+        id: mStackId
         anchors.fill: parent
-        initialItem: Page1{
-
+        initialItem: Page1 {
         }
     }
 }

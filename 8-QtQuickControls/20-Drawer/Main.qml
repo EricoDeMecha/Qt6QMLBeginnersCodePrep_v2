@@ -6,15 +6,15 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 ApplicationWindow {
-    id : rootId
+    id: rootId
     visible: true
     width: 360
     height: 520
     title: qsTr("Drawer")
 
-    header: ToolBar{
+    header: ToolBar {
         height: 50
-        background: Rectangle{
+        background: Rectangle {
             color: "mintcream"
         }
 
@@ -22,19 +22,18 @@ ApplicationWindow {
             spacing: 20
             anchors.fill: parent
 
-            ToolButton{
-                background: Rectangle{
+            ToolButton {
+                background: Rectangle {
                     color: "mintcream"
                 }
 
-                icon.source: "qrc:/images/drawer.png"
+                icon.source: "images/drawer.png"
 
                 onClicked: {
-                    console.log("Toolbutton clicked")
+                    console.log("Toolbutton clicked");
                     //Open Drawer
-                    drawerId.open()
+                    drawerId.open();
                 }
-
             }
 
             Label {
@@ -45,77 +44,73 @@ ApplicationWindow {
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
                 Layout.fillWidth: true
-
-
-
             }
         }
     }
 
     Drawer {
         id: drawerId
-        width: Math.min(rootId.width,rootId.height) * (2/3)
+        width: Math.min(rootId.width, rootId.height) * (2 / 3)
         height: rootId.height
         interactive: true
 
-        ColumnLayout{
+        ColumnLayout {
             spacing: 0
             width: parent.width
 
-            Button{
+            Button {
                 width: parent.width
                 height: 50
-                text : "Item1"
+                text: "Item1"
                 font.pointSize: 20
-                background: Rectangle{
+                background: Rectangle {
                     color: "beige"
                 }
                 Layout.fillWidth: true
 
                 onClicked: {
-                    console.log("Clicked on item1 ")
-                    contentRectId.color = "red"
-                    drawerId.close()
+                    console.log("Clicked on item1 ");
+                    contentRectId.color = "red";
+                    drawerId.close();
                 }
             }
-            Button{
+            Button {
                 width: parent.width
                 height: 50
-                text : "Item2"
+                text: "Item2"
                 font.pointSize: 20
-                background: Rectangle{
+                background: Rectangle {
                     color: "yellowgreen"
                 }
                 Layout.fillWidth: true
 
                 onClicked: {
-                    console.log("Clicked on item2 ")
-                    contentRectId.color = "green"
-                    drawerId.close()
+                    console.log("Clicked on item2 ");
+                    contentRectId.color = "green";
+                    drawerId.close();
                 }
             }
-            Button{
+            Button {
                 width: parent.width
                 height: 50
-                text : "Item3"
+                text: "Item3"
                 font.pointSize: 20
-                background: Rectangle{
+                background: Rectangle {
                     color: "dodgerblue"
                 }
                 Layout.fillWidth: true
 
                 onClicked: {
-                    console.log("Clicked on item3 ")
-                    contentRectId.color = "blue"
-                    drawerId.close()
+                    console.log("Clicked on item3 ");
+                    contentRectId.color = "blue";
+                    drawerId.close();
                 }
             }
         }
-
     }
 
-    Rectangle{
-        id : contentRectId
+    Rectangle {
+        id: contentRectId
         anchors.fill: parent
         color: "gray"
     }

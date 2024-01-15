@@ -10,34 +10,37 @@ Window {
     height: 480
     title: qsTr("PageIndicator and SwipeView")
 
-    SwipeView{
+    SwipeView {
         id: swipeViewId
         anchors.fill: parent
         currentIndex: pageIndicatorId.currentIndex
         anchors.bottomMargin: 20
 
-       Image {
-           id: image1
-           fillMode: Image.PreserveAspectFit
-           //source: "https://www.learnqt.guide/images/qt_quick_fundamentals.png"
-           source:"qrc:/images/1.png"
-       }
-       Image {
-           id: image2
-           fillMode: Image.PreserveAspectFit
-           //source: "https://www.learnqt.guide/images/qt_quick_intermediate.png"
-           source: "qrc:/images/2.png"
-       }
-       Image {
-           id: image3
-           fillMode: Image.PreserveAspectFit
-           //source: "https://www.learnqt.guide/images/qt_quick_advanced.png"
-           source: "qrc:/images/3.png"
-       }
+        Image {
+            id: image1
+            fillMode: Image.PreserveAspectFit
+            //source: "https://www.learnqt.guide/images/qt_quick_fundamentals.png"
+            source: "images/1.png"
+        }
+        Image {
+            id: image2
+            fillMode: Image.PreserveAspectFit
+            //source: "https://www.learnqt.guide/images/qt_quick_intermediate.png"
+            source: "images/2.png"
+        }
+        Image {
+            id: image3
+            fillMode: Image.PreserveAspectFit
+            //source: "https://www.learnqt.guide/images/qt_quick_advanced.png"
+            source: "images/3.png"
+        }
 
+        onCurrentIndexChanged: {
+            console.log("Current page index  : " + currentIndex);
+        }
     }
 
-    PageIndicator{
+    PageIndicator {
         id: pageIndicatorId
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
@@ -48,5 +51,7 @@ Window {
         count: swipeViewId.count
     }
 
-
+    Component.onCompleted: {
+        console.log("Current page index  : " + swipeViewId.currentIndex);
+    }
 }

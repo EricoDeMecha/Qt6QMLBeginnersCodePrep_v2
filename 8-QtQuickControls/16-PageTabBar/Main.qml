@@ -14,49 +14,47 @@ Window {
         id: pageId
         anchors.fill: parent
 
-        header: Rectangle{
+        header: Rectangle {
             width: parent.width
             height: 50
             color: "yellowgreen"
-            Text{
+            Text {
                 text: "Some header text"
                 anchors.centerIn: parent
             }
         }
 
-        SwipeView{
+        SwipeView {
             id: swipeViewId
             anchors.fill: parent
             currentIndex: tabBarId.currentIndex
 
-            Image{
+            Image {
                 fillMode: Image.PreserveAspectFit
-                source: "qrc:/images/1.png"
+                source: "images/1.png"
             }
 
-            Image{
+            Image {
                 fillMode: Image.PreserveAspectFit
-                source: "qrc:/images/2.png"
+                source: "images/2.png"
             }
-            Image{
+            Image {
                 fillMode: Image.PreserveAspectFit
-                source: "qrc:/images/3.png"
+                source: "images/3.png"
             }
-
-
         }
 
-        footer: TabBar{
+        footer: TabBar {
             id: tabBarId
             currentIndex: swipeViewId.currentIndex
 
-            TabButton{
+            TabButton {
                 text: "First"
             }
-            TabButton{
+            TabButton {
                 text: "Second"
             }
-            TabButton{
+            TabButton {
                 text: "Third"
             }
         }

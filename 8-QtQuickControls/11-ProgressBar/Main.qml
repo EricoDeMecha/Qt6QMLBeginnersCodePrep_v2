@@ -18,37 +18,37 @@ Window {
             text: "Start"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
-                progressBarId.value = 78
+                progressBarId.value = 78;
+                progressBarId1.indeterminate = !progressBarId1.indeterminate;
             }
         }
 
-
         Dial {
-           id: dialId
-           from : 1
-           to: 100
-           value: 40
-           anchors.horizontalCenter: parent.horizontalCenter
-           onValueChanged: {
-               progressBarId.value = value
-           }
-
+            id: dialId
+            from: 1
+            to: 100
+            value: 40
+            anchors.horizontalCenter: parent.horizontalCenter
+            onValueChanged: {
+                progressBarId.value = value;
+            }
         }
 
-
         ProgressBar {
-           id: progressBarId
-           from: 1
-           to: 100
-           value: 40
-           anchors.horizontalCenter: parent.horizontalCenter
-
+            id: progressBarId
+            from: 1
+            to: 100
+            value: 40
+            anchors.horizontalCenter: parent.horizontalCenter
+            onValueChanged: {
+                console.log("Current Value:" + visualPosition);
+            }
         }
 
         ProgressBar {
             id: progressBarId1
             indeterminate: true
-           anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter: parent.horizontalCenter
         }
     }
 }

@@ -19,11 +19,10 @@ Window {
             text: "Option1"
             checked: true
             onCheckStateChanged: {
-                if (checked)
-                {
-                    console.log("Option1 is checked")
-                }else{
-                    console.log("Option1 is unchecked")
+                if (checked) {
+                    console.log("Option1 is checked");
+                } else {
+                    console.log("Option1 is unchecked");
                 }
             }
         }
@@ -34,6 +33,25 @@ Window {
             text: "Option3"
             checked: false
             enabled: false
+        }
+
+        ButtonGroup {
+            id: childGroupId
+            exclusive: false
+            checkState: parentCheckBoxId.checkState
+        }
+        CheckBox {
+            id: parentCheckBoxId
+            text: "Parent"
+            checkState: childGroupId.checkState
+        }
+        Repeater {
+            model: ["Child 1", "Child 2", "Child 2"]
+            CheckBox {
+                text: modelData
+                leftPadding: 20
+                ButtonGroup.group: childGroupId
+            }
         }
     }
 }

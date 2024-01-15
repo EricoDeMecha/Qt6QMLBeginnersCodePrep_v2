@@ -7,10 +7,10 @@ import QtQuick.Controls
 Window {
     visible: true
     width: 640
-    height: 480
+    height: 560
     title: qsTr("GroupBox")
 
-    Column{
+    Column {
         spacing: 10
         anchors.fill: parent
 
@@ -22,25 +22,25 @@ Window {
             text: "A GroupBox wrapping around RadioButtons."
         }
 
-        GroupBox{
+        GroupBox {
             title: "Choose bonus"
             anchors.horizontalCenter: parent.horizontalCenter
-            Column{
+            Column {
 
-                RadioButton{
+                RadioButton {
                     text: "Coke"
                     onCheckedChanged: {
-                        if( checked){
-                            console.log("Coke button checked")
-                        }else{
-                            console.log("Coke button is NOT checked")
+                        if (checked) {
+                            console.log("Coke button checked");
+                        } else {
+                            console.log("Coke button is NOT checked");
                         }
                     }
                 }
-                RadioButton{
+                RadioButton {
                     text: "Green Tea"
                 }
-                RadioButton{
+                RadioButton {
                     text: "Ice Cream"
                 }
             }
@@ -54,30 +54,60 @@ Window {
             text: "A GroupBox wrapping around CheckBoxes."
         }
 
-
-        GroupBox{
+        GroupBox {
             title: "Choose Qt supported Desktop Platform"
             anchors.horizontalCenter: parent.horizontalCenter
-            Column{
+            Column {
 
-                CheckBox{
+                CheckBox {
                     text: "Windows"
                     onCheckedChanged: {
-                        if( checked){
-                            console.log("Windows button checked")
-                        }else{
-                            console.log("Windows button is NOT checked")
+                        if (checked) {
+                            console.log("Windows button checked");
+                        } else {
+                            console.log("Windows button is NOT checked");
                         }
                     }
                 }
-                CheckBox{
+                CheckBox {
                     text: "Mac"
                 }
-                CheckBox{
+                CheckBox {
                     text: "Linux"
                 }
             }
         }
+        // Disable and enable a groupbox
+        Label {
+            width: parent.width
+            wrapMode: Label.Wrap
+            horizontalAlignment: Qt.AlignHCenter
+            text: "A Groupbox that can enabled and disabled"
+        }
 
+        GroupBox {
+            anchors.horizontalCenter: parent.horizontalCenter
+            label: CheckBox {
+                id: checkBox
+                checked: true
+                text: checked ? "Disable" : "Enable"
+                onCheckedChanged: {
+                    console.log("Status: " + text + "d");
+                }
+            }
+
+            Column {
+                enabled: checkBox.checked
+                CheckBox {
+                    text: qsTr("Item 1")
+                }
+                CheckBox {
+                    text: qsTr("Item 2")
+                }
+                CheckBox {
+                    text: qsTr("Item 3")
+                }
+            }
+        }
     }
 }
