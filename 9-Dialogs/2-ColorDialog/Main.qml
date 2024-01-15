@@ -1,7 +1,6 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
-
 import QtQuick
 import QtQuick.Dialogs
 import QtQuick.Controls
@@ -16,32 +15,31 @@ Window {
         spacing: 20
         anchors.centerIn: parent
 
-        Button{
-            text : "Choose Color"
+        Button {
+            text: "Choose Color"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
-                colorDialogId.open()
+                colorDialogId.open();
             }
         }
-        Rectangle{
+        Rectangle {
+            id: rectangleId
             width: 200
             height: 200
-            id : rectangleId
             border.color: "black"
             border.width: 8
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
-        ColorDialog{
+        ColorDialog {
             id: colorDialogId
             title: "Please choose a color"
             onAccepted: {
-                console.log("User chose color: "+ selectedColor)
-                rectangleId.color = selectedColor
-
+                console.log("User chose color: " + selectedColor);
+                rectangleId.color = selectedColor;
             }
             onRejected: {
-                console.log("User rejected dialog")
+                console.log("User rejected dialog");
             }
         }
     }
