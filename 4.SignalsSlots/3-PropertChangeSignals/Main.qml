@@ -40,8 +40,26 @@ Window {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                rect.width = rect.width + 20
+                rect.width += 20
             }
+            onPressed: {
+                timer.start()
+            }
+            onReleased: {
+                timer.stop()
+            }
+
         }
+        Timer {
+               id: timer
+               interval: 100
+               repeat: true
+               running: false
+
+               onTriggered: {
+                   // Increment the width of the rectangle every 100ms
+                   rect.width += 2
+               }
+           }
     }
 }
