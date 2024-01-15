@@ -18,7 +18,7 @@ qt_add_executable(app1-TextInput
 qt_add_qml_module(app1-TextInput
     URI 1-TextInput
     VERSION 1.0
-    QML_FILES Main.qml
+    QML_FILES Main.qml LabeledTextInput.qml
 )
 
 set_target_properties(app1-TextInput PROPERTIES

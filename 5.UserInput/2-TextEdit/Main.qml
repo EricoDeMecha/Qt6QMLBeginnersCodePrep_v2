@@ -9,9 +9,7 @@ Window {
     height: 480
     title: qsTr("TextEdit Demo")
 
-
-
-        /*
+    /*
         TextEdit {
             id: textInputId
             width: 240
@@ -46,10 +44,9 @@ Window {
         focus: true
 
         onEditingFinished: {
-            console.log("The current text is: "+ text)
+            console.log("The current text is: " + text);
         }
     }
-
 
     Rectangle {
         id: mRectId
@@ -57,13 +54,11 @@ Window {
         height: 100
         color: "red"
         anchors.top: textInputId.bottom
-        MouseArea{
+        MouseArea {
             anchors.fill: parent
             onClicked: {
-              console.log("The new text is: "+textInputId.text)
+                console.log("The new text is: " + textInputId.text);
             }
         }
     }
-
-
 }

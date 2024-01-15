@@ -10,13 +10,19 @@ Window {
     title: qsTr("FocusScope Demo")
 
     Column {
-        MButton{
-           color: "yellow"
-           focus: true
+        spacing: 20
+        anchors {
+            centerIn: parent
         }
 
-        MButton{
+        MButton {
+            color: "yellow"
+            focus: true
+        }
+
+        MButton {
             color: "green"
+            // focus: true
         }
     }
 }
