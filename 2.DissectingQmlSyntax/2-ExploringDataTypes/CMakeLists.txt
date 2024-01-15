@@ -5,23 +5,29 @@ cmake_minimum_required(VERSION 3.16)
 
 project(2-ExploringDataTypes VERSION 0.1 LANGUAGES CXX)
 
+if(NOT DEFINED CMAKE_CXX_STANDARD)
+    set(CMAKE_CXX_STANDARD 17)
+endif()
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Quick)
 
-qt_standard_project_setup(REQUIRES 6.5)
+set(MY_TARGET app2-ExploringDataTypes)
 
-qt_add_executable(app2-ExploringDataTypes
+qt_standard_project_setup()
+
+qt_add_executable(${MY_TARGET}
     main.cpp
 )
 
-qt_add_qml_module(app2-ExploringDataTypes
+qt_add_qml_module(${MY_TARGET}
     URI 2-ExploringDataTypes
     VERSION 1.0
     QML_FILES Main.qml
 )
 
-set_target_properties(app2-ExploringDataTypes PROPERTIES
+set_target_properties(${MY_TARGET} PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -29,12 +35,20 @@ set_target_properties(app2-ExploringDataTypes PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(app2-ExploringDataTypes
+target_link_libraries(${MY_TARGET}
     PRIVATE Qt6::Quick
 )
 
-install(TARGETS app2-ExploringDataTypes
+install(TARGETS ${MY_TARGET}
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+qt_generate_deploy_app_script(
+    TARGET ${MY_TARGET}
+    OUTPUT_SCRIPT deploy_script
+    NO_UNSUPPORTED_PLATFORM_ERROR
+)
+
+install(SCRIPT ${deploy_script})

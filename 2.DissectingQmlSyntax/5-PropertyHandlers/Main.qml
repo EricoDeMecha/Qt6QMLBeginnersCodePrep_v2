@@ -11,10 +11,12 @@ Window {
     title: qsTr("Properties and Handlers Demo")
 
     property string firstName: "Daniel"
-    onFirstNameChanged: {
+    onFirstNameChanged: {// Note: naming convetion matter
         console.log("The firstname changed to: " + firstName)
     }
-
+    // onFirstNameDChanged: {// This will throw an error since with object do not have a property firstNamed
+    //     console.log("The firstname changed to: " + firstName)
+    // }
     onTitleChanged: {
         console.log("The new title is: " + rootId.title)
     }
