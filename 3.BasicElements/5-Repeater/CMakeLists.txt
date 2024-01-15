@@ -3,13 +3,13 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(21-Image-cmake-resource-system VERSION 0.1 LANGUAGES CXX)
+project(5-Repeater VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
-set(MY_TARGET app21-Image-cmake-resource-system)
+set(MY_TARGET app-repeater)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -25,7 +25,7 @@ qt_add_resources(${MY_TARGET} "qml"
   )
 
 qt_add_qml_module(${MY_TARGET}
-    URI 2-Image
+    URI ${PROJECT_NAME}
     VERSION 1.0
     QML_FILES
         Main.qml
