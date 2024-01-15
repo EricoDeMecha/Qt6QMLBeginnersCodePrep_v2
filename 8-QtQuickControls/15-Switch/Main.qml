@@ -14,27 +14,27 @@ Window {
         width: parent.width
         spacing: 20
 
-        Switch{
+        Switch {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "WiFi"
             checked: true
             onCheckedChanged: {
-                if(checked)
-                {
-                    console.log("WiFi switch is turned ON")
-                }else{
-                    console.log("WiFi switch is turned OFF")
+                if (checked) {
+                    console.log("WiFi switch is turned ON");
+                } else {
+                    console.log("WiFi switch is turned OFF");
                 }
             }
         }
-        Switch{
+        Switch {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Bluetooth"
         }
-        Switch{
+        Switch {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "NFC"
             enabled: false
         }
     }
+    // Resource: https://doc.qt.io/qt-6/qtquickcontrols-customize.html#customizing-switch
 }
