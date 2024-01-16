@@ -11,7 +11,6 @@ Window {
     height: 480
     title: qsTr("Inline Model")
 
-
     ListView {
         id: mListViewId
         anchors.fill: parent
@@ -35,7 +34,7 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Clicked on: "+ modelData)
+                    console.log("Clicked on: " + modelData);
                 }
             }
         }
