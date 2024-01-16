@@ -13,9 +13,14 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(app9-XmlListModel
-    main.cpp resource.qrc
+    main.cpp
 )
 
+qt_add_resources(app9-XmlListModel "qml"
+    PREFIX /
+    FILES
+    xml/employees.xml
+)
 qt_add_qml_module(app9-XmlListModel
     URI 9-XmlListModel
     VERSION 1.0
