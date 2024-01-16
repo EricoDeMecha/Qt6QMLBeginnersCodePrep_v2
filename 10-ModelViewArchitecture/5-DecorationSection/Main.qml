@@ -10,50 +10,56 @@ Window {
     height: 480
     title: qsTr("Section  (Decoration)")
 
-
     ListModel {
         id: mListModel
 
         ListElement {
-            names: "Seth Moris"; company: "GOOGLE"
+            names: "Seth Moris"
+            company: "GOOGLE"
         }
         ListElement {
-            names: "Miriam Katv"; company: "GOOGLE"
+            names: "Miriam Katv"
+            company: "GOOGLE"
         }
 
         ListElement {
-            names: "Eugene Fitzgerald"; company: "GOOGLE"
+            names: "Eugene Fitzgerald"
+            company: "GOOGLE"
         }
         ListElement {
-            names: "Kantkl Vikney"; company : "GOOGLE"
+            names: "Kantkl Vikney"
+            company: "GOOGLE"
         }
         ListElement {
-            names: "Mary Beige"; company: "TESLA"
+            names: "Mary Beige"
+            company: "TESLA"
         }
         ListElement {
-            names: "Bamba Pikt"; company: "TESLA"
+            names: "Bamba Pikt"
+            company: "TESLA"
         }
         ListElement {
-            names: "Jeffery Mor"; company: "SIEMENS"
+            names: "Jeffery Mor"
+            company: "SIEMENS"
         }
         ListElement {
-            names: "Pick Mo"; company: "SIEMENS"
+            names: "Pick Mo"
+            company: "SIEMENS"
         }
-
     }
-
 
     ListView {
         id: mListViewId
         anchors.fill: parent
-        model : mListModel
+        model: mListModel
         delegate: delegateId
         section {
             property: "company"
             criteria: ViewSection.FullString
-            delegate: Rectangle{
+            // labelPositioning: ViewSection.CurrentLabelAtStart
+            delegate: Rectangle {
                 id: sectionRectId
-                width : parent.width
+                width: parent.width
                 height: 50
                 color: "red"
                 border.color: "yellowgreen"
@@ -61,7 +67,7 @@ Window {
 
                 Text {
                     id: sectionTextId
-                    text : section
+                    text: section
                     anchors.centerIn: parent
                     font.pointSize: 20
                 }
@@ -69,19 +75,18 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        console.log("Clicked on: " + section)
+                        console.log("Clicked on: " + section);
                     }
                 }
             }
         }
     }
 
-
     Component {
         id: delegateId
         Rectangle {
             id: rectangleId
-            width : parent.width  // Remember to specify these sizes or you'll have problems
+            width: parent.width  // Remember to specify these sizes or you'll have problems
             height: 50
             color: "beige"
             border.color: "yellowgreen"
@@ -97,10 +102,9 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Clicked on: " + names)
+                    console.log("Clicked on: " + names);
                 }
             }
-
         }
     }
 }
