@@ -12,8 +12,7 @@ Window {
 
     Flickable {
         contentHeight: columnId.implicitHeight
-        anchors.fill : parent
-
+        anchors.fill: parent
 
         Column {
             id: columnId
@@ -36,15 +35,14 @@ Window {
                         font.pointSize: 20
                     }
 
-                    MouseArea{
+                    MouseArea {
                         anchors.fill: parent
                         onClicked: {
-                            console.log("Clicked on: "+modelData)
-                            console.log("count: " + repeaterId.count)
+                            console.log("Clicked on: " + modelData);
+                            console.log("count: " + repeaterId.count);
                         }
                     }
                 }
-
             }
         }
     }
