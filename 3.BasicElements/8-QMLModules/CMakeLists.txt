@@ -24,6 +24,7 @@ qt_add_qml_module(${MY_TARGET}
         Main.qml
 )
 
+# resource(https://cmake.org/cmake/help/latest/command/add_subdirectory.html)
 add_subdirectory(components)
 
 set_target_properties(${MY_TARGET} PROPERTIES
@@ -35,7 +36,7 @@ set_target_properties(${MY_TARGET} PROPERTIES
 )
 
 target_link_libraries(${MY_TARGET}
-    PRIVATE Qt6::Quick MyComponentsLibplugin
+    PRIVATE Qt6::Quick MyComponentsLibplugin # link component here with suffix *Plugin
 )
 
 install(TARGETS ${MY_TARGET}

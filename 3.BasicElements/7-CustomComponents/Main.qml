@@ -84,7 +84,8 @@ Window {
         }
     }
 
-    // inlined component(same button as above but inlined)
+    // inlined component(same button as above but inlined) 
+    // resource(https://www.qt.io/blog/new-qml-language-features-in-qt-5.15)
     component InlinedButton: Rectangle {
         id: mButtonId
         property alias buttonText: buttonTextId.text
