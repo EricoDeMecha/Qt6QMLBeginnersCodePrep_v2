@@ -5,13 +5,11 @@ import QtQuick
 import QtQuick.Window
 import QtQml.XmlListModel
 
-
 Window {
     visible: true
     width: 640
     height: 480
     title: qsTr("XmlListModel")
-
 
     XmlListModel {
         id: mXmlListModelId
@@ -30,18 +28,38 @@ Window {
             name: "coursename"
             elementName: "coursename"
         }
-        XmlListModelRole { name: "hot"
+        XmlListModelRole {
+            name: "hot"
             elementName: "coursename"
             attributeName: "hot"
         }
+        // onProgressChanged: {
+        //     console.log("Loading... " + progress);
+        // }
+        // onStatusChanged: {
+        //     switch (status) {
+        //     case XmlListModel.Null:
+        //         console.log("No XML data has been set for this model.");
+        //         break;
+        //     case XmlListModel.Ready:
+        //         console.log("The XML data has been loaded into the model.");
+        //         break;
+        //     case XmlListModel.Loading:
+        //         console.log("The model is in the process of reading and loading XML data.");
+        //         break;
+        //     case XmlListModel.Error:
+        //         console.log("An error occurred while the model was loading. Error.." + mXmlListModelId.errorString());
+        //         break;
+        //     }
+        // }
     }
 
-    ListView{
+    ListView {
         id: mListViewId
         anchors.fill: parent
-        model : mXmlListModelId
+        model: mXmlListModelId
         delegate: Rectangle {
-            width : parent.width
+            width: parent.width
             height: 50
             color: "beige"
             Row {
@@ -59,7 +77,7 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Clicked on: "+ hot)
+                    console.log("Clicked on: " + hot);
                 }
             }
         }
