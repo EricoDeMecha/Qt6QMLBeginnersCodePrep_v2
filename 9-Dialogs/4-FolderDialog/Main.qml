@@ -5,7 +5,6 @@ import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Dialogs
 
-
 Window {
     visible: true
     width: 640
@@ -16,55 +15,31 @@ Window {
         spacing: 20
         anchors.centerIn: parent
 
-        Button{
+        Button {
             text: "Choose Folder"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
-                folderDialogId.open()
+                folderDialogId.open();
             }
         }
 
         Text {
             id: textId
-            text : "Use hasn't chosen yet"
+            text: "Use hasn't chosen yet"
             wrapMode: Text.Wrap
         }
 
-        FolderDialog{
+        FolderDialog {
             id: folderDialogId
             title: "Choose Folder"
-
+            currentFolder: folderDialogId.currentFolder
             onAccepted: {
-                textId.text = selectedFolder
-
+                textId.text = currentFolder;
             }
 
             onRejected: {
-                textId.text = "Dialog rejected"
+                textId.text = "Dialog rejected";
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

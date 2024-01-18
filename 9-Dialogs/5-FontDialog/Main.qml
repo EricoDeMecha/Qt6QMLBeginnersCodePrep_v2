@@ -16,11 +16,11 @@ Window {
         spacing: 20
         anchors.centerIn: parent
 
-        Button{
+        Button {
             text: "Change Font"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
-                fontDialogId.open()
+                fontDialogId.open();
             }
         }
 
@@ -29,48 +29,23 @@ Window {
             text: "Hello World"
         }
 
-        FontDialog{
+        FontDialog {
             id: fontDialogId
             title: "Choose Font"
-            currentFont: Qt.font({ family: "Arial", pointSize: 24, weight: Font.Normal })
+            currentFont: Qt.font({
+                    family: "Arial",
+                    pointSize: 24,
+                    weight: Font.Normal
+                })
 
             onAccepted: {
-                console.log("Chose font: "+selectedFont)
-                textId.font = fontDialogId.selectedFont
+                console.log("Chose font: " + selectedFont);
+                textId.font = fontDialogId.selectedFont;
             }
             onRejected: {
-                console.log("Dialog rejected")
+                console.log("Dialog rejected");
             }
+            options: FontDialog.MonospacedFonts
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -12,10 +12,19 @@ Window {
     height: 480
     title: qsTr("MessageDialog ")
 
-    Button{
-        text: "Push Me"
-        onClicked: {
-            messageDialog.open()
+    Column {
+        Button {
+            text: "Push Me"
+            onClicked: {
+                messageDialog.open();
+            }
+        }
+
+        Button {
+            text: "Push Me for help"
+            onClicked: {
+                messageDialog2.open();
+            }
         }
     }
 
@@ -25,10 +34,37 @@ Window {
         text: "Lie down and watch the sky."
         buttons: MessageDialog.Ok | MessageDialog.Close
         onAccepted: {
-            console.log("Dialog accepted.")
+            console.log("Dialog accepted.");
         }
         onRejected: {
-            console.log("Dialog rejected")
+            console.log("Dialog rejected");
+        }
+    }
+    MessageDialog {
+        id: messageDialog2
+        title: "Message"
+        text: "Need Help?"
+        buttons: MessageDialog.Help | MessageDialog.No
+        // onAccepted: {
+        //     console.log("Dialog accepted.")
+        // }
+        // onRejected: {
+        //     console.log("Dialog rejected")
+        // }
+        onButtonClicked: (button, role) => {
+            // you can check with buttons
+            switch (button) {
+            case MessageDialog.Help:
+                console.log("Help Button clicked");
+                messageDialog2.close();
+                break;
+            }
+            // or roles(resource: https://doc.qt.io/qt-6/qml-qtquick-dialogs-messagedialog.html)
+            switch (role) {
+            case MessageDialog.NoRole:
+                console.log("No Button clicked");
+                break;
+            }
         }
     }
 }
