@@ -11,69 +11,82 @@ Window {
     height: 480
     title: qsTr("Rest APIs Demo")
 
-    function fetchData( url , callback){
-
+    function fetchData(url, callback) {
         var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
                 print('HEADERS_RECEIVED');
-            } else if(xhr.readyState === XMLHttpRequest.DONE) {
-                print('DONE')
-                if ( xhr.status == 200)
-                {
-                    console.log("resource found" + xhr.responseText.toString())
-                    callback(xhr.responseText.toString())
-                }else
-                {
-                    callback(null)
+            } else if (xhr.readyState === XMLHttpRequest.DONE) {
+                print('DONE');
+                if (xhr.status == 200) {
+                    console.log("resource found" + xhr.responseText.toString());
+                    callback(xhr.responseText.toString());
+                } else {
+                    callback(null);
                 }
             }
-        }
-        xhr.open("GET",url );
+        };
+        xhr.open("GET", url);
         xhr.send();
-
     }
 
-    ColumnLayout{
+    ColumnLayout {
         anchors.fill: parent
         spacing: 0
 
-
-        ListModel{
+        ListModel {
             id: mListModelId
         }
 
-        ListView{
+        ListView {
             id: mListViewId
             model: mListModelId
             delegate: mDelegateId
             Layout.fillWidth: true
             Layout.fillHeight: true
-
         }
 
-        Button{
+        Button {
             id: mButtonId
             Layout.fillWidth: true
             text: "Fetch"
             onClicked: {
-                fetchData("https://jsonplaceholder.typicode.com/users", function(response){
-                    if ( response){
-                        //Parse the data
-                        //Turn the returned JSON string into a JSON object that you can parse
-                        var object = JSON.parse(response)
+                mListModelId.clear();
+                fetchData("https://jsonplaceholder.typicode.com/users", function (response) {
+                        if (response) {
+                            //Parse the data
+                            //Turn the returned JSON string into a JSON object that you can parse
+                            var object = JSON.parse(response);
 
-                        //Loop over the json object capturing joke data
-                        object.forEach(function(userdata){
-                            mListModelId.append({"userdata" : userdata.name})
-
-                        })
-                    }else{
-                        console.log("Something went wrong")
-                    }
-                })
+                            //Loop over the json object capturing joke data
+                            object.forEach(function (userdata) {
+                                    mListModelId.append({
+                                            "userdata": userdata.name
+                                        });
+                                });
+                        } else {
+                            console.log("Something went wrong");
+                        }
+                    });
             }
 
+            // onClicked: {
+            //     fetchData("https://jsonplaceholder.typicode.com/users", function(response){
+            //         if ( response){
+            //             //Parse the data
+            //             //Turn the returned JSON string into a JSON object that you can parse
+            //             var object = JSON.parse(response)
+
+            //             //Loop over the json object capturing joke data
+            //             object.forEach(function(userdata){
+            //                 mListModelId.append({"userdata" : userdata.name})
+
+            //             })
+            //         }else{
+            //             console.log("Something went wrong")
+            //         }
+            //     })
+            // }
 
         }
 
@@ -81,16 +94,16 @@ Window {
             id: mDelegateId
             Rectangle {
                 id: rectangleId
-                width : parent.width
-                height: textId.implicitHeight+30
+                width: parent.width
+                height: textId.implicitHeight + 30
                 color: "beige"
                 border.color: "yellowgreen"
                 radius: 5
 
                 Text {
+                    id: textId
                     width: parent.width
                     height: parent.height
-                    id: textId
                     anchors.centerIn: parent
                     text: userdata //Or modelData
                     //text: modelData
@@ -101,5 +114,23 @@ Window {
                 }
             }
         }
+    }
+    Component.onCompleted: {
+        fetchData("https://jsonplaceholder.typicode.com/users", function (response) {
+                if (response) {
+                    //Parse the data
+                    //Turn the returned JSON string into a JSON object that you can parse
+                    var object = JSON.parse(response);
+
+                    //Loop over the json object capturing joke data
+                    object.forEach(function (userdata) {
+                            mListModelId.append({
+                                    "userdata": userdata.name
+                                });
+                        });
+                } else {
+                    console.log("Something went wrong");
+                }
+            });
     }
 }
