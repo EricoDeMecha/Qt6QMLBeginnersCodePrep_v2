@@ -13,7 +13,14 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(app13-StatesTransitions
-    main.cpp resource.qrc
+    main.cpp
+)
+
+qt_add_resources(app13-StatesTransitions "images"
+    PREFIX /
+    FILES
+    images/treespringsmall.png
+    images/treesummersmall.png
 )
 
 qt_add_qml_module(app13-StatesTransitions

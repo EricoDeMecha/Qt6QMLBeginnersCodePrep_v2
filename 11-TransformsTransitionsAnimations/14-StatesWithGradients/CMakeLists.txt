@@ -13,9 +13,15 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(app14-StatesWithGradients
-    main.cpp resource.qrc
+    main.cpp
 )
 
+qt_add_resources(app14-StatesWithGradients "images"
+    PREFIX /
+    FILES
+    images/treespringsmall.png
+    images/treesummersmall.png
+)
 qt_add_qml_module(app14-StatesWithGradients
     URI 14-StatesWithGradients
     VERSION 1.0
