@@ -76,7 +76,7 @@ Window {
         id: textAreaId
         anchors.fill: parent
         textFormat: TextArea.RichText
-        text: "Html Data here"
+        text: "Click to load HTML data here"
     }
 
     MouseArea{
