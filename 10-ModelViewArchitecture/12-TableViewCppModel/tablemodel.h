@@ -13,7 +13,9 @@ class TableModel : public QAbstractTableModel
   Q_OBJECT
   QML_ELEMENT
   enum TableRoles {
-    TableDataRole = Qt::UserRole + 1,
+    TableDataRole = Qt::DisplayRole + 1,
+    TableHorizontalHeaderDataRole,
+    TableVerticalHeaderDataRole,
   };
 
 public:

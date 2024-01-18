@@ -41,6 +41,28 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
   switch (role) {
   case TableDataRole:
     return table.at(index.row()).at(index.column());
+  case TableHorizontalHeaderDataRole:
+    switch (index.column()) {
+    case 0:
+      return "Name";
+    case 1:
+      return "Name";
+    case 2:
+      return "Age";
+    case 3:
+      return "Job";
+    case 4:
+      return "Status";
+    case 5:
+      return "Country";
+    case 6:
+      return "City";
+    default:
+      break;
+    }
+    break;
+  case TableVerticalHeaderDataRole:
+    return QVariant::fromValue(index.row());
   default:
     break;
   }
@@ -49,7 +71,7 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
 
 QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-  if (role != Qt::DisplayRole) { return QVariant(); }
+  // if (role != Qt::DisplayRole) { return QVariant(); }
   if (orientation == Qt::Horizontal) {
     switch (section) {
     case 0:
@@ -79,6 +101,8 @@ QHash<int, QByteArray> TableModel::roleNames() const
 {
   return {
     { TableDataRole, "tabledata" },
+    { TableHorizontalHeaderDataRole, "horizontaldata" },
+    { TableVerticalHeaderDataRole, "verticaldata" },
   };
 }
 

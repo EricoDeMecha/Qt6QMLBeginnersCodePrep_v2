@@ -19,6 +19,7 @@ ApplicationWindow {
         anchors.left: tableViewId.left
         anchors.top: parent.top
         syncView: tableViewId
+        textRole: "horizontaldata"
         clip: true
     }
 
@@ -27,6 +28,7 @@ ApplicationWindow {
         anchors.top: tableViewId.top
         anchors.left: parent.left
         syncView: tableViewId
+        textRole: "verticaldata"
         clip: true
     }
 
