@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Window
 import QtCore
+
 Window {
     visible: true
     width: 640
@@ -20,8 +21,16 @@ Window {
             height: 200
             //color : "blue"
             gradient: Gradient {
-                GradientStop {id: skyStartColorId; position: 0.0; color: "blue" }
-                GradientStop {id: skyEndColorId; position: 1.0; color: "#66CCFF" }
+                GradientStop {
+                    id: skyStartColorId
+                    position: 0.0
+                    color: "blue"
+                }
+                GradientStop {
+                    id: skyEndColorId
+                    position: 1.0
+                    color: "#66CCFF"
+                }
             }
         }
 
@@ -32,8 +41,16 @@ Window {
             width: parent.width
             //color: "lime"
             gradient: Gradient {
-                GradientStop {id: groundStartColorId; position: 0.0; color: "lime" }
-                GradientStop {id: groundEndColorId; position: 1.0; color: "#66CCFF" }
+                GradientStop {
+                    id: groundStartColorId
+                    position: 0.0
+                    color: "lime"
+                }
+                GradientStop {
+                    id: groundEndColorId
+                    position: 1.0
+                    color: "#66CCFF"
+                }
             }
         }
 
@@ -55,15 +72,13 @@ Window {
         }
 
         Rectangle {
-            id : sunId
-            x: parent.width - width -100
+            id: sunId
+            x: parent.width - width - 100
             y: 50
             width: 100
             height: 100
             color: "yellow"
             radius: 60
-
-
         }
 
         //state : "spring"
@@ -72,11 +87,10 @@ Window {
         //States
         states: [
             State {
-                name : "summer"
+                name: "summer"
                 PropertyChanges {
                     target: skyId
                     color: "lightblue"
-
                 }
 
                 PropertyChanges {
@@ -88,8 +102,6 @@ Window {
                     color: "#EECCFF"
                 }
 
-
-
                 PropertyChanges {
                     target: treeSummerId
                     opacity: 1
@@ -98,7 +110,6 @@ Window {
                     target: treespringId
                     opacity: 0
                 }
-
 
                 PropertyChanges {
                     target: groundStartColorId
@@ -111,10 +122,7 @@ Window {
                 PropertyChanges {
                     target: sunId
                     color: "yellow"
-
                 }
-
-
             },
             State {
                 name: "spring"
@@ -158,8 +166,9 @@ Window {
             }
         ]
 
-        transitions : Transition {
-            from: "*" ; to: "*"
+        transitions: Transition {
+            from: "*"
+            to: "*"
 
             ColorAnimation {
                 duration: 500
@@ -170,10 +179,10 @@ Window {
             }
         }
 
-        MouseArea{
+        MouseArea {
             anchors.fill: parent
             onClicked: {
-                containerRectId.state = (containerRectId.state === "spring" ? "summer" : "spring")
+                containerRectId.state = (containerRectId.state === "spring" ? "summer" : "spring");
             }
         }
 
@@ -183,7 +192,7 @@ Window {
         }
 
         Component.onDestruction: {
-            settings.state = containerRectId.state
+            settings.state = containerRectId.state;
         }
     }
 }
