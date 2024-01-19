@@ -16,52 +16,53 @@ Window {
         id: mListModel
 
         ListElement {
-            firstName: "John"; lastName: "Snow"
+            firstName: "John"
+            lastName: "Snow"
         }
         ListElement {
-            firstName: "Nicholai"; lastName: "Itchenko"
+            firstName: "Nicholai"
+            lastName: "Itchenko"
         }
         ListElement {
-            firstName: "Mitch"; lastName: "Mathson"
+            firstName: "Mitch"
+            lastName: "Mathson"
         }
         ListElement {
-            firstName: "Ken"; lastName: "Kologorov"
+            firstName: "Ken"
+            lastName: "Kologorov"
         }
         ListElement {
-            firstName: "Vince"; lastName: "Luvkyj"
+            firstName: "Vince"
+            lastName: "Luvkyj"
         }
-
-
     }
 
     ColumnLayout {
         anchors.fill: parent
-        ListView{
+        ListView {
             id: mListViewId
             model: mListModel
             delegate: delegateId
-            Layout.fillWidth : true
+            Layout.fillWidth: true
             Layout.fillHeight: true
-
         }
-
-
 
         Button {
             text: "Add Item"
-            Layout.fillWidth : true
+            Layout.fillWidth: true
             onClicked: {
-               mListModel.append({"firstName": "Daniel", "lastName": "Gakwaya"})
+                mListModel.append({
+                        "firstName": "Daniel",
+                        "lastName": "Gakwaya"
+                    });
             }
         }
 
-
         Button {
             text: "Clear"
-            Layout.fillWidth : true
+            Layout.fillWidth: true
             onClicked: {
-                mListModel.clear()
-
+                mListModel.clear();
             }
         }
 
@@ -69,10 +70,10 @@ Window {
             text: "Delete Item at index 2"
             Layout.fillWidth: true
             onClicked: {
-                if ( 2  < mListViewId.model.count){
-                    mListModel.remove(2,1)
-                }else{
-                    console.log("index is invalid")
+                if (2 < mListViewId.model.count) {
+                    mListModel.remove(2, 1);
+                } else {
+                    console.log("index is invalid");
                 }
             }
         }
@@ -81,11 +82,12 @@ Window {
             text: "Set item at index 1"
             Layout.fillWidth: true
             onClicked: {
-                mListModel.set(1,{"firstName": "John", "lastName": "Doe"})
-
+                mListModel.set(1, {
+                        "firstName": "John",
+                        "lastName": "Doe"
+                    });
             }
         }
-
     }
 
     Component {
@@ -101,14 +103,14 @@ Window {
             Text {
                 id: textId
                 anchors.centerIn: parent
-                text : firstName + " " + lastName
+                text: firstName + " " + lastName
                 font.pointSize: 20
             }
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Clicked on: " + firstName + " " + lastName)
+                    console.log("Clicked on: " + firstName + " " + lastName);
                 }
             }
         }

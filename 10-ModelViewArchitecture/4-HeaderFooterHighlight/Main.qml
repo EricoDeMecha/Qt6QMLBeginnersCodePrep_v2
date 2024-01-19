@@ -15,12 +15,12 @@ Window {
         id: mListViewId
         anchors.fill: parent
         header: headerId
-        footer: Rectangle{
+        footer: Rectangle {
             width: rootId.width
             height: 50
             color: "dodgerblue"
         }
-        highlight: Rectangle{
+        highlight: Rectangle {
             width: rootId.width
             color: "blue"
             radius: 14
@@ -42,14 +42,14 @@ Window {
                 id: textId
                 anchors.centerIn: parent
                 font.pointSize: 20
-                text : modelData
+                text: modelData
             }
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Clicked on: "+ modelData)
-                    mListViewId.currentIndex = index
+                    console.log("Clicked on: " + modelData);
+                    mListViewId.currentIndex = index;
                 }
             }
         }
@@ -62,14 +62,16 @@ Window {
             width: rootId.width
             height: 50
             color: "yellowgreen"
-            border {color: "#9EDDF2"; width: 2}
+            border {
+                color: "#9EDDF2"
+                width: 2
+            }
 
             Text {
                 anchors.centerIn: parent
                 text: "Months"
                 font.pointSize: 20
             }
-
         }
     }
 }

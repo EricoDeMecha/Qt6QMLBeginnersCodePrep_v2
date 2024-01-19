@@ -5,15 +5,20 @@ cmake_minimum_required(VERSION 3.16)
 
 project(9-XmlListModel VERSION 0.1 LANGUAGES CXX)
 
-set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Xml)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(app9-XmlListModel
-    main.cpp resource.qrc
+    main.cpp
+)
+
+qt_add_resources(app9-XmlListModel "xml"
+    PREFIX /
+    FILES
+    xml/employees.xml
 )
 
 qt_add_qml_module(app9-XmlListModel
@@ -31,7 +36,7 @@ set_target_properties(app9-XmlListModel PROPERTIES
 )
 
 target_link_libraries(app9-XmlListModel
-    PRIVATE Qt6::Quick
+    PRIVATE Qt6::Quick Qt6::Xml
 )
 
 install(TARGETS app9-XmlListModel

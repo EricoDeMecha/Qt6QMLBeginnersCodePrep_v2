@@ -10,13 +10,17 @@ ApplicationWindow {
     height: 400
     visible: true
 
+    TableModel {
+        id: tableModelId
+    }
+
     HorizontalHeaderView {
         id: horizontalHeader
         anchors.left: tableViewId.left
         anchors.top: parent.top
         syncView: tableViewId
+        textRole: "horizontaldata"
         clip: true
-
     }
 
     VerticalHeaderView {
@@ -24,16 +28,13 @@ ApplicationWindow {
         anchors.top: tableViewId.top
         anchors.left: parent.left
         syncView: tableViewId
+        textRole: "verticaldata"
         clip: true
-
-    }
-
-    TableModel{
-        id: tableModelId
     }
 
     TableView {
         id: tableViewId
+
         anchors.left: verticalHeader.right
         anchors.top: horizontalHeader.bottom
         anchors.right: parent.right
@@ -45,7 +46,7 @@ ApplicationWindow {
 
         model: tableModelId
 
-        delegate:  Label {
+        delegate: Label {
             text: model.tabledata
             width: 100
             padding: 12
@@ -58,11 +59,11 @@ ApplicationWindow {
         }
     }
 
-    Button{
+    Button {
         text: "See the data"
         anchors.bottom: parent.bottom
         onClicked: {
-            console.log(tableModelId.get_display_data(tableModelId.index(0,1)))
+            console.log(tableModelId.get_display_data(tableModelId.index(0, 1)));
         }
     }
 }

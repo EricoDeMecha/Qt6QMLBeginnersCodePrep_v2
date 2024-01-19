@@ -4,28 +4,33 @@
 #ifndef TABLEMODEL_H
 #define TABLEMODEL_H
 
-#include <QObject>
 #include <QAbstractTableModel>
+#include <QObject>
+#include <QQmlEngine>
 
 class TableModel : public QAbstractTableModel
 {
-    Q_OBJECT
-    enum TableRoles{
-        TableDataRole = Qt::UserRole + 1,
-    };
-public:
-    explicit TableModel(QObject *parent = nullptr);
-    int rowCount(const QModelIndex & = QModelIndex()) const override;
-    int columnCount(const QModelIndex & = QModelIndex()) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
+  Q_OBJECT
+  QML_ELEMENT
+  enum TableRoles {
+    TableDataRole = Qt::DisplayRole + 1,
+    TableHorizontalHeaderDataRole,
+    TableVerticalHeaderDataRole,
+  };
 
-    Q_INVOKABLE
-    QVariant get_display_data(const QModelIndex& index);
+public:
+  explicit TableModel(QObject *parent = nullptr);
+  int rowCount(const QModelIndex & = QModelIndex()) const override;
+  int columnCount(const QModelIndex & = QModelIndex()) const override;
+  QVariant data(const QModelIndex &index, int role) const override;
+  QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+  QHash<int, QByteArray> roleNames() const override;
+
+  Q_INVOKABLE
+  QVariant get_display_data(const QModelIndex &index);
 
 private:
-    QVector<QVector<QString>> table;
+  QVector<QVector<QString>> table;
 };
 
-#endif // TABLEMODEL_H
+#endif// TABLEMODEL_H
