@@ -3,13 +3,13 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(1-RectangleItemText VERSION 0.1 LANGUAGES CXX)
+project(7-CustomComponents VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
-set(MY_TARGET app1-RectangleItemText)
+set(MY_TARGET app7-CustomComponents)
 
 qt_standard_project_setup()
 
@@ -18,9 +18,11 @@ qt_add_executable(${MY_TARGET}
 )
 
 qt_add_qml_module(${MY_TARGET}
-    URI 1-RectangleItemText
+    URI ${PROJECT_NAME}
     VERSION 1.0
-    QML_FILES Main.qml
+    QML_FILES
+        Main.qml
+        MButton.qml
 )
 
 set_target_properties(${MY_TARGET} PROPERTIES
@@ -48,3 +50,4 @@ qt_generate_deploy_app_script(
 )
 
 install(SCRIPT ${deploy_script})
+

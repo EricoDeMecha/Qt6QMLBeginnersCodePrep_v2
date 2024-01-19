@@ -54,7 +54,6 @@ Window {
     }
     */
 
-
     /*
     MButton {
         id: button1
@@ -67,21 +66,70 @@ Window {
     }
     */
 
+    // Components
     Column {
+        x: 10
+        y: 10
         MButton {
             buttonText: "Button1"
             onButtonClicked: {
-                console.log("Clicked on button1")
+                console.log("Clicked on component button1");
             }
-
         }
         MButton {
             buttonText: "Button2"
             onButtonClicked: {
-                console.log("clicked on button2")
+                console.log("clicked on component button2");
             }
         }
     }
 
-}
+    // inlined component(same button as above but inlined) 
+    // resource(https://www.qt.io/blog/new-qml-language-features-in-qt-5.15)
+    component InlinedButton: Rectangle {
+        id: mButtonId
+        property alias buttonText: buttonTextId.text
+        signal buttonClicked
+        width: buttonTextId.implicitWidth + 20
+        height: buttonTextId.implicitHeight + 20
+        color: "red"
+        border {
+            color: "blue"
+            width: 3
+        }
 
+        Text {
+            id: buttonTextId
+            text: "Button"
+            anchors.centerIn: parent
+            onTextChanged: {
+                console.log("Text changed to " + buttonTextId.text);
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                //console.log("Clicked on :"+ buttonTextId.text)
+                mButtonId.buttonClicked();
+            }
+        }
+    }
+
+    Column {
+        x: 10
+        y: 100
+        InlinedButton {
+            buttonText: "Button3"
+            onButtonClicked: {
+                console.log("Clicked on inlined component button3");
+            }
+        }
+        InlinedButton {
+            buttonText: "Button4"
+            onButtonClicked: {
+                console.log("clicked on inlined component button4");
+            }
+        }
+    }
+}

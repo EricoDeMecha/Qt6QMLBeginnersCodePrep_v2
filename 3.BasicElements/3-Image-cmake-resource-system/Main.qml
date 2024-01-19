@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import QtQuick
+import QtQuick.Layouts
 
 Window {
     visible: true
@@ -11,19 +12,19 @@ Window {
 
     Item {
         id: containerItemId
-        x: 150
-        y: 50
+        // x: 150; y: 50
         width: 600
         height: 300
+        anchors.centerIn: parent
 
-        Image {
-            x: 10
-            y: 50
-            width: 100
-            height: 100
-            //Loading image from the working directory
-            source: "file:LearnQt.png"
-        }
+        // Image {
+        //     x: 10
+        //     y: 50
+        //     width: 100
+        //     height: 100
+        //     //Loading image from the working directory
+        //     source: "file:LearnQt.png"
+        // }
 
         Image {
             x: 150
@@ -34,15 +35,15 @@ Window {
             source: "qrc:/images/LearnQt.png"
         }
 
-        //Load image from a full path
-        Image {
-            x: 300
-            y: 50
-            width: 100
-            height: 100
-            //Specify the full path to the image
-            source: "file:///D:/Artwork/LearnQt.png" // platform-dependent(windows)
-        }
+        // //Load image from a full path
+        // Image {
+        //     x: 300
+        //     y: 50
+        //     width: 100
+        //     height: 100
+        //     //Specify the full path to the image
+        //     source: "file:///D:/Artwork/LearnQt.png" // platform-independent(windows user)
+        // }
 
         Image {
             x: 450

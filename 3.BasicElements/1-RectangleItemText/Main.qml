@@ -11,7 +11,8 @@ Window {
 
     Item {
         id: containerItemId
-        x: 50; y: 50
+        x: 50
+        y: 50
         width: 400
         height: 200
 
@@ -49,7 +50,6 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-
                 }
             }
         }
@@ -63,11 +63,9 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-
                 }
             }
         }
-
 
         Rectangle {
             x: 120
@@ -78,7 +76,6 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-
                 }
             }
         }
@@ -92,17 +89,16 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-
                 }
             }
         }
 
-
         Text {
+            id: mTextId
             x: 100
             y: 100
-            id: mTextId
             text: "Hello World!"
+
             //font.family: "Helvetica"; font.pointSize: 13; font.bold: true
 
             /*
@@ -114,11 +110,12 @@ Window {
             */
 
             font {
-                family: "Helvetica"; pointSize: 13; bold: true
+                family: "Helvetica"
+                pointSize: 13
+                bold: true
             }
 
             color: "red"
         }
-
     }
 }
