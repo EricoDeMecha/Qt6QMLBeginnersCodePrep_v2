@@ -1,6 +1,16 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+    . Exploring some facilities from the Qt global object
+            . quitting the applications
+            . listing available fonts
+            . Hashing a string
+            . opening urls and local file paths
+            . capturing platform information
+
+  */
+
 import QtQuick
 
 Window {

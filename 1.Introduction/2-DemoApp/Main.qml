@@ -1,6 +1,12 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+    . Show three ways to run QML code:
+        . Qt creator project
+        . Qt creator UI prototype
+        . qml tool on the terminal
 
+  */
 import QtQuick
 
 Window {

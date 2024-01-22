@@ -1,7 +1,22 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+
+/*
+        Reference: https://doc.qt.io/qt-5/qtqml-typesystem-basictypes.html
+        Show from string to url
+        Properties are usually declared towards the top of the file
+        Click on var and start exploring : copy the types from the docs and play with them
+        End by working with font and date
+        Break the lecture in two parts :
+        Part1 : from string to url
+        Part2 : the rest
+
+  */
+
+
 import QtQuick
+
 
 Window {
     visible: true
@@ -13,12 +28,17 @@ Window {
     property int mInt: 45
     property bool isFemale: true
     property double mDouble: 77.5
+    property real mReal: 22.67
     property url mUrl: "https://www.learnqt.guide"
+
+
 
     property var aNumber: 100 // not-recommended (use int or real to better performance)
     property var aBool: false // same-case
     property var aString: "Hello world!" // similar  case
     property var anotherString: String("#FF008800")
+
+
     property var aColor: Qt.rgba(0.2, 0.3, 0.4, 0.5)
     property var aRect: Qt.rect(10, 10, 10, 10)
     property var aPoint: Qt.point(10, 10)
@@ -30,6 +50,8 @@ Window {
 
     property var aFont: Qt.font({family: "Consolas", pointSize: 30, bold: false})
     property date mDate: "2018-07-19"
+
+
 
     Rectangle {
         width: 200
