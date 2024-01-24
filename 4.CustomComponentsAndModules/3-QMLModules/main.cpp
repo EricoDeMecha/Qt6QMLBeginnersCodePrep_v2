@@ -12,7 +12,8 @@ int main(int argc, char *argv[])
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
         &app, []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.loadFromModule("5-Repeater", "Main");
+    engine.addImportPath(":/");
+    engine.loadFromModule("3-QMLModules", "Main");
 
     return app.exec();
 }
