@@ -1,8 +1,14 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+        . Setting up a bunch of QML custom elements as part of a QML module
+
+
+  */
+
 import QtQuick
-import MyComponents
+import GreatButtons
 
 Window {
     visible: true
@@ -20,11 +26,17 @@ Window {
                 console.log("Clicked on component button1");
             }
         }
-        MButton {
+        RedButton {
             buttonText: "Button2"
             onButtonClicked: {
                 console.log("clicked on component button2");
             }
+        }
+        GreenButton{
+            buttonText: "Button3"
+        }
+        BlueButton{
+            buttonText: "Button4"
         }
     }
 }
