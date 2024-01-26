@@ -26,7 +26,7 @@ Window {
     title: qsTr("Property change handlers")
 
     Rectangle {
-        id: rect
+        id: rectId
         width: 300
         height: width + 50
         color: "dodgerblue"
@@ -51,14 +51,13 @@ Window {
 
         onDescriptionChanged: {
             console.log("Description changed to: " + description)
-
         }
 
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                rect.width += 20
-                rect.description = "New data"
+                rectId.width += 20
+                rectId.description = "New data"
             }
 
         }
