@@ -1,6 +1,32 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+        . Exploring signal handlers for built in signals
+            . Components in QML will have pre-defined signals
+            . For example : MouseArea has these signals :
+                    canceled()
+                    clicked(MouseEvent mouse)
+                    doubleClicked(MouseEvent mouse)
+                    entered()
+                    exited()
+                    positionChanged(MouseEvent mouse)
+                    pressAndHold(MouseEvent mouse)
+                    pressed(MouseEvent mouse)
+                    released(MouseEvent mouse)
+                    wheel(WheelEvent wheel)
+
+             . You can process any of these signals by setting up a signal
+                    handler with the syntax : On<SignalName> with the first
+                    letter capitalized. Examples :
+                        onClicked:{//Code that responds to click}
+                        onEntered: {//Code that responds to Enter}
+
+             . We play with a bunch of them
+
+
+  */
+
 import QtQuick
 
 Window {
@@ -20,7 +46,7 @@ Window {
         MouseArea {
             anchors.fill: parent
 
-            //hoverEnabled: true
+            hoverEnabled: true
 
             onClicked: {
                 console.log("Clicked on the rect");
@@ -32,12 +58,10 @@ Window {
 
             onEntered: {
                 console.log("You're in!");
-                isMouseWithinParent = true;
             }
 
             onExited: {
                 console.log("You're out!");
-                isMouseWithinParent = false;
             }
 
             onWheel: function (wheel) {
@@ -56,11 +80,7 @@ Window {
                 console.log("Was Held " + mouse.wasHeld);
             }
             onPositionChanged: mouse => {
-                if (isMouseWithinParent) {
-                    console.log("Tracking mouse within parent x:" + mouse.x + ",y:" + mouse.y);
-                } else {
-                    console.log("Tracking mouse outside parent x:" + mouse.x + ",y:" + mouse.y);
-                }
+                console.log("Tracking mouse, x:" + mouse.x + ",y:" + mouse.y);
             }
         }
     }
