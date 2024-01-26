@@ -12,11 +12,29 @@ qt_add_executable(app4-QMLModuleqmldir
     main.cpp
 )
 
-qt_add_qml_module(app4-QMLModuleqmldir
-    URI 4-QMLModuleqmldir
-    VERSION 1.0
-    QML_FILES Main.qml
+add_custom_command(
+  TARGET app4-QMLModuleqmldir
+  POST_BUILD
+  COMMAND ${CMAKE_COMMAND}
+  ARGS -E copy_directory
+    ${CMAKE_CURRENT_SOURCE_DIR}/custom_buttons
+    ${CMAKE_CURRENT_BINARY_DIR}/custom_buttons
 )
+
+add_custom_command(
+  TARGET app4-QMLModuleqmldir
+  POST_BUILD
+  COMMAND ${CMAKE_COMMAND}
+  ARGS -E copy
+    ${CMAKE_CURRENT_SOURCE_DIR}/Main.qml
+    ${CMAKE_CURRENT_BINARY_DIR}/
+)
+
+# qt_add_qml_module(app4-QMLModuleqmldir
+#     URI 4-QMLModuleqmldir
+#     VERSION 1.0
+#     QML_FILES Main.qml
+# )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

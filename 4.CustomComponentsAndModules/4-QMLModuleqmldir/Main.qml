@@ -17,10 +17,35 @@
 
   */
 import QtQuick
+import GreatButtons 1.0
 
 Window {
+    visible: true
     width: 640
     height: 480
-    visible: true
-    title: qsTr("Hello World")
+    title: qsTr("QML Components QMlDir Demo")
+
+    // Components
+    Column {
+        x: 10
+        y: 10
+        MButton {
+            buttonText: "Button1"
+            onButtonClicked: {
+                console.log("Clicked on component button1");
+            }
+        }
+        RedButton {
+            buttonText: "Button2"
+            onButtonClicked: {
+                console.log("clicked on component button2");
+            }
+        }
+        GreenButton{
+            buttonText: "Button3"
+        }
+        BlueButton{
+            buttonText: "Button4"
+        }
+    }
 }

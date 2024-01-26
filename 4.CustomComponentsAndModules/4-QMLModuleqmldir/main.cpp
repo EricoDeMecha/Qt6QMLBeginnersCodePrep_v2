@@ -12,7 +12,9 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.loadFromModule("4-QMLModuleqmldir", "Main");
+    engine.addImportPath("./custom_buttons");
+    engine.load(QUrl("Main.qml"));
+    // engine.loadFromModule("4-QMLModuleqmldir", "Main");
 
     return app.exec();
 }
