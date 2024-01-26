@@ -1,5 +1,5 @@
-set(MODULE_NAME MyComponents)
-set(LIB_NAME ${MODULE_NAME}Lib) # MyComponentsLib
+set(MODULE_NAME GreatButtons)
+set(LIB_NAME ${MODULE_NAME}Lib) # GreatButtonsLib
 
 qt_add_library(${LIB_NAME} STATIC)
 
@@ -8,9 +8,12 @@ target_link_libraries(${LIB_NAME} PRIVATE Qt6::Quick)
 
 qt_add_qml_module(${LIB_NAME}
     URI ${MODULE_NAME}
-    VERSION 1.0
+    # VERSION 1.0
     RESOURCE_PREFIX /
     QML_FILES
         MButton.qml
+        RedButton.qml
+        GreenButton.qml
+        BlueButton.qml
 )
 

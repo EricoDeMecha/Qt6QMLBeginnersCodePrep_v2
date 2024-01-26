@@ -36,7 +36,7 @@ set_target_properties(${MY_TARGET} PROPERTIES
 )
 
 target_link_libraries(${MY_TARGET}
-    PRIVATE Qt6::Quick GreatButtonsLibplugin # link component here with suffix *Plugin
+    PRIVATE Qt6::Quick GreatButtonsLibplugin # link component here with suffix *plugin
 )
 
 install(TARGETS ${MY_TARGET}
