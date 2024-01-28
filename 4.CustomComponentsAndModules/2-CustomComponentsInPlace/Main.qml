@@ -18,7 +18,6 @@ Window {
     title: qsTr("Custom Components Demo")
 
     //Component and Loader
-    /*
     Row{
         spacing: 20
         Loader {
@@ -51,7 +50,6 @@ Window {
 
     Component {
         id: buttonComponent
-
         Item {
             id: rootId
             property alias buttonText: buttonTextId.text
@@ -87,12 +85,12 @@ Window {
             }
         }
     }
-    */
 
 
 
     // inlined component(same button as above but inlined)
     // resource(https://www.qt.io/blog/new-qml-language-features-in-qt-5.15)
+    /*
     component MButton: Rectangle {
         id: mButtonId
         property alias buttonText: buttonTextId.text
@@ -137,6 +135,8 @@ Window {
             }
         }
     }
+
+    */
 
 
 }

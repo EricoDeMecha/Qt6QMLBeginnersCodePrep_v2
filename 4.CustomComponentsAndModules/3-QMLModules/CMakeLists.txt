@@ -24,7 +24,6 @@ qt_add_qml_module(${MY_TARGET}
         Main.qml
 )
 
-# resource(https://cmake.org/cmake/help/latest/command/add_subdirectory.html)
 add_subdirectory(custom_buttons)
 
 set_target_properties(${MY_TARGET} PROPERTIES
