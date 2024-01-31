@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickView>
 
 int main(int argc, char *argv[])
 {
@@ -12,9 +13,7 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.addImportPath("./custom_buttons");
-    engine.load(QUrl("Main.qml"));
-    // engine.loadFromModule("4-QMLModuleqmldir", "Main");
+    engine.loadFromModule("4-QMLModuleqmldir", "Main");
 
-    return app.exec();
+      return app.exec();
 }

@@ -17,7 +17,8 @@
 
   */
 import QtQuick
-import GreatButtons 1.0
+// import GreatButtons  // Error, TODO fix qmldir integration with cmake
+import "custom_buttons"
 
 Window {
     visible: true
@@ -41,10 +42,10 @@ Window {
                 console.log("clicked on component button2");
             }
         }
-        GreenButton{
+        GreenButton {
             buttonText: "Button3"
         }
-        BlueButton{
+        BlueButton {
             buttonText: "Button4"
         }
     }
