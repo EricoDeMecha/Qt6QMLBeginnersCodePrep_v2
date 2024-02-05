@@ -1,7 +1,7 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
-import QtQuick
+import QtQuick 2.9
 
 Item {
     id: rootId
@@ -14,7 +14,7 @@ Item {
         id: containerRectId
         width: buttonTextId.implicitWidth + 20
         height: buttonTextId.implicitHeight + 20
-        color: "blue"
+        color: "green"
         border {
             color: "blue"
             width: 3

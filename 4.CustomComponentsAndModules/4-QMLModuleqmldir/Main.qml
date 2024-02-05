@@ -16,11 +16,11 @@
 
 
   */
-import QtQuick
-// import GreatButtons  // Error, TODO fix qmldir integration with cmake
-import "custom_buttons"
+import QtQuick 2.9
+import QtQuick.Controls 2.5
+import CustomButtons 1.0
 
-Window {
+ApplicationWindow {
     visible: true
     width: 640
     height: 480
