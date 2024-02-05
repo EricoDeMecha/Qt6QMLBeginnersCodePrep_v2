@@ -1,4 +1,4 @@
-# qmldir module 
+# qmldir module without any resource system
 
 - __Supported in < Qt6.0__
 - __Works with QMake Build System__
