@@ -18,7 +18,7 @@
   */
 import QtQuick 2.9
 import QtQuick.Controls 2.5
-import CustomButtons 1.0
+import custom_buttons 1.0
 
 ApplicationWindow {
     visible: true

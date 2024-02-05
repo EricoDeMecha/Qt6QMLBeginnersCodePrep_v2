@@ -7,8 +7,8 @@ int main(int argc, char *argv[])
   QGuiApplication app(argc, argv);
 
   QQmlApplicationEngine engine;
-  engine.addImportPath("qrc:/");
-  const QUrl url("qrc:/Main.qml");
+  engine.addImportPath(".");
+  const QUrl url("./Main.qml");
   QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
     &app, [url](QObject *obj, const QUrl &objUrl) {
       if (!obj && url == objUrl)
