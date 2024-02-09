@@ -3,16 +3,21 @@
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication app(argc, argv);
+  QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
-    QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreationFailed,
-        &app,
-        []() { QCoreApplication::exit(-1); },
-        Qt::QueuedConnection);
-    engine.loadFromModule("5-QMLModulesqmldirResources", "Main");
+  QQmlApplicationEngine engine;
+  engine.addImportPath("qrc:/");
+  const QUrl url("qrc:/Main.qml");
 
-    return app.exec();
+  QObject::connect(
+    &engine,
+    &QQmlApplicationEngine::objectCreated,
+    &app,
+    [url](QObject *obj, const QUrl &objUrl) {
+      if (!obj && url == objUrl) QCoreApplication::exit(-1);
+    },
+    Qt::QueuedConnection);
+  // engine.loadFromModule("5-QMLModulesqmldirResources", "Main"); // qt6 feature
+  engine.load(url);
+  return app.exec();
 }

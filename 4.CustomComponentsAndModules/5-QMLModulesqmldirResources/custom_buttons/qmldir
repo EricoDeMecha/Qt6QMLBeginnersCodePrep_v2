@@ -1,0 +1,5 @@
+module custom_buttons
+BlueButton 1.0 BlueButton.qml
+RedButton 1.0 RedButton.qml
+MButton 1.0 MButton.qml 
+GreenButton 1.0 GreenButton.qml

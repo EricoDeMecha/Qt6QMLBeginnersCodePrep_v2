@@ -83,7 +83,7 @@ Window {
     */
 
     // Buttons in a Column element
-    /*
+
     Column {
         x: 10
         y: 10
@@ -100,7 +100,7 @@ Window {
             }
         }
     }
-    */
+
 
 
 
