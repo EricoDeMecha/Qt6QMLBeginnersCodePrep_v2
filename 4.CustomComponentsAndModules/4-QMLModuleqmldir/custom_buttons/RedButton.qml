@@ -1,7 +1,7 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
-import QtQuick
+import QtQuick 2.9
 
 Item {
     id: rootId
