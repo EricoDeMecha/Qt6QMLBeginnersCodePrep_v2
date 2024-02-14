@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(5-KeyNavigation VERSION 0.1 LANGUAGES CXX)
+project(3-TextEdit VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -11,17 +11,17 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-qt_add_executable(app5-KeyNavigation
+qt_add_executable(app3-TextEdit
     main.cpp
 )
 
-qt_add_qml_module(app5-KeyNavigation
-    URI 5-KeyNavigation
+qt_add_qml_module(app3-TextEdit
+    URI 3-TextEdit
     VERSION 1.0
     QML_FILES Main.qml
 )
 
-set_target_properties(app5-KeyNavigation PROPERTIES
+set_target_properties(app3-TextEdit PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -29,11 +29,11 @@ set_target_properties(app5-KeyNavigation PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(app5-KeyNavigation
+target_link_libraries(app3-TextEdit
     PRIVATE Qt6::Quick
 )
 
-install(TARGETS app5-KeyNavigation
+install(TARGETS app3-TextEdit
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

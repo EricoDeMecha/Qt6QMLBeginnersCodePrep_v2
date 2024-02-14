@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(4-KeysAttachedProperty VERSION 0.1 LANGUAGES CXX)
+project(2-BetterTextInput VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -11,17 +11,17 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-qt_add_executable(app4-KeysAttachedProperty
+qt_add_executable(app2-BetterTextInput
     main.cpp
 )
 
-qt_add_qml_module(app4-KeysAttachedProperty
-    URI 4-KeysAttachedProperty
+qt_add_qml_module(app2-BetterTextInput
+    URI 2-BetterTextInput
     VERSION 1.0
-    QML_FILES Main.qml
+    QML_FILES Main.qml LabeledTextInput.qml
 )
 
-set_target_properties(app4-KeysAttachedProperty PROPERTIES
+set_target_properties(app2-BetterTextInput PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -29,11 +29,11 @@ set_target_properties(app4-KeysAttachedProperty PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(app4-KeysAttachedProperty
+target_link_libraries(app2-BetterTextInput
     PRIVATE Qt6::Quick
 )
 
-install(TARGETS app4-KeysAttachedProperty
+install(TARGETS app2-BetterTextInput
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

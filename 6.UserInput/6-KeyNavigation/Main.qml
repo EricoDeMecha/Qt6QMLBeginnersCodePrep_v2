@@ -1,6 +1,16 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+        . Exploring the KeyNavigation attached property
+            . Allows to shift focus to other components in a ui
+            . start out with the commented code below
+            . Then steal the snippet from the docs and use it
+                just for the fun of it.
+
+
+  */
+
 import QtQuick
 
 Window {
@@ -9,6 +19,7 @@ Window {
     height: 480
     title: qsTr("Key Navigation Demo")
 
+    /*
     Grid {
         anchors.centerIn: parent
         columns: 2
@@ -54,8 +65,8 @@ Window {
             KeyNavigation.up: topRight
         }
     }
+    */
 
-    /*
     Row {
         anchors.centerIn: parent
 
@@ -93,45 +104,6 @@ Window {
             KeyNavigation.left: firstRectId
         }
     }
-    */
 
-    /* Rectangle {
-           id: constraintRectangleId
-           anchors.centerIn: parent
-           width: 400
-           height: 300
-           color: "lightgray"
 
-           Rectangle {
-               id: redSquareId
-               width: 50
-               height: 50
-               color: "red"
-               focus: true
-
-               Keys.onLeftPressed: {
-                   if (redSquareId.x > 0) {
-                       redSquareId.x -= 10;
-                   }
-               }
-
-               Keys.onRightPressed: {
-                   if (redSquareId.x + redSquareId.width < constraintRectangleId.width) {
-                       redSquareId.x += 10;
-                   }
-               }
-
-               Keys.onUpPressed: {
-                   if (redSquareId.y > 0) {
-                       redSquareId.y -= 10;
-                   }
-               }
-
-               Keys.onDownPressed: {
-                   if (redSquareId.y + redSquareId.height < constraintRectangleId.height) {
-                       redSquareId.y += 10;
-                   }
-               }
-           }
-       }*/
 }

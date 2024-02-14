@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
         &app, []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.loadFromModule("6-FocusScope", "Main");
+    engine.loadFromModule("7-FocusScope", "Main");
 
     return app.exec();
 }

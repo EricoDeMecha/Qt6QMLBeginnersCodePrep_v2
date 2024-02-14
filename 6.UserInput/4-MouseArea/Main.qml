@@ -1,6 +1,16 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+        . Exploring more about MouseArea
+            . The onClicked handler
+            . Using the event parameter to print x and y
+                . Use functions for this
+            . Handling wheel events
+            . Handling hover
+            . Dragging in another separate rectangle below
+  */
+
 import QtQuick
 
 Window {
