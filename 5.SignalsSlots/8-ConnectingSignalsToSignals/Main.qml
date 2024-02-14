@@ -30,7 +30,7 @@ Window {
             anchors.fill: parent
             onClicked: {
                 //Fire the signal by just calling it like a function
-                rectId.greet("The sky is blue from greet()");// goes through forward greeting
+                //rectId.greet("The sky is blue from greet()");// goes through forward greeting
                 rectId.forward_greeting("The sky is blue from forward_greeting()"); // goes directly to respond_your_way slot
             }
         }
