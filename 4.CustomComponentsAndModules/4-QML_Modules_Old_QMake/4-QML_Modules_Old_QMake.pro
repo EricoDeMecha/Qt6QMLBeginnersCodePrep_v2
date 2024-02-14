@@ -15,7 +15,7 @@ QML_IMPORT_PATH = $$PWD
 QML_DESIGNER_IMPORT_PATH =
 
 # Not sure if this is needed. Will confirm after test on linux.
-DISTFILES += custom_buttons/qmldir
+# DISTFILES += custom_buttons/qmldir
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
