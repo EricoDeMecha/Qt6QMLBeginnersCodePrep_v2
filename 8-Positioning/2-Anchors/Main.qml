@@ -1,6 +1,20 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+
+        . Exploring anchors
+            . We build a grid of rectangles
+            . The first one , topLeftRectId, will show up in the top left corner
+                of containerRectId. The rest will be positioned according to the position
+                of topLeftRectId
+
+             . Doc : https://doc.qt.io/qt-6/qtquick-positioning-anchors.html
+
+             . Note that The bottom row will be positioned in terms of centerCenterRectId
+
+  */
+
 import QtQuick
 
 Window {
