@@ -1,0 +1,37 @@
+<mxfile host="Electron" modified="2024-02-15T06:34:02.862Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="myzBGhlv4aKBN8kiwPhh" version="21.2.8" type="device">
+  <diagram name="Page-1" id="2XWkQP5S-hDbL94sL5Vg">
+    <mxGraphModel dx="2058" dy="1180" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" background="#999999" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="APLwThIm-aDqV8bCMrbt-1" value="JavaScript nested in QML Modules (CMake)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=25;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="260" width="860" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AgI4lJf8-Eyjv56uBOGG-1" value="JavaScript" style="rounded=0;whiteSpace=wrap;html=1;fontSize=43;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="380" width="440" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="AgI4lJf8-Eyjv56uBOGG-2" value="QML" style="rounded=0;whiteSpace=wrap;html=1;fontSize=43;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1630" y="380" width="420" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="KW_APl7xmqNeMr_W1B6V-1" value="components" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;fillColor=#bac8d3;strokeColor=#23445d;" vertex="1" parent="1">
+          <mxGeometry x="2300" y="340" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KW_APl7xmqNeMr_W1B6V-2" value="utilities" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;fillColor=#d0cee2;strokeColor=#56517e;" vertex="1" parent="1">
+          <mxGeometry x="2300" y="440" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KW_APl7xmqNeMr_W1B6V-3" value="constants" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;fillColor=#b0e3e6;strokeColor=#0e8088;" vertex="1" parent="1">
+          <mxGeometry x="2300" y="530" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KW_APl7xmqNeMr_W1B6V-4" value="Button" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="2660" y="340" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KW_APl7xmqNeMr_W1B6V-5" value="JS functions" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="2660" y="440" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KW_APl7xmqNeMr_W1B6V-6" value="sizes, colors, themes" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="2660" y="530" width="450" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

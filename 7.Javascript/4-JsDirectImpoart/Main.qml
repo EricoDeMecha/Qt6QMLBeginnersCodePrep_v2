@@ -1,6 +1,17 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+        . Importing js files : https://doc.qt.io/qt-5/qtqml-javascript-imports.html
+        . You add them as QML files in the CMake file
+        . This lecture : Import js into QML
+            . The syntax :
+                . import "utilities1.js" as Utilities1
+        . What if we want to import JS from another js file? That's indirect import.
+            We cover that in the next lecture.
+
+  */
+
 import QtQuick
 import "utilities1.js" as Utilities1
 

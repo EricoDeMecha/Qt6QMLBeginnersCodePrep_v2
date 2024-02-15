@@ -1,6 +1,16 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+    . Exploring JS usage in QML
+        . Show its usage
+            . in property bindings
+            . in functions
+            . in signal handlers
+
+
+  */
+
 import QtQuick
 
 Window {
@@ -35,12 +45,14 @@ Window {
         drag.minimumY: 0
         drag.maximumY: parent.height - containerRectId.height
     }
-    // MouseArea {
-    //     anchors.fill: parent
-    //     drag.target: containerRectId
-    //     drag.axis: Drag.YAxis
-    //     drag.minimumY: 0
-    //     drag.maximumY: parent.heigh - containerRectId.height
+    /*
+    MouseArea {
+        anchors.fill: parent
+        drag.target: containerRectId
+        drag.axis: Drag.YAxis
+        drag.minimumY: 0
+        drag.maximumY: parent.heigh - containerRectId.height
 
-    // }
+    }
+    */
 }
