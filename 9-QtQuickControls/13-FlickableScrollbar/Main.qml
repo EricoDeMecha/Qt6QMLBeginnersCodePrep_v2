@@ -1,5 +1,17 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+        . Exploring Flickable and ScrollBar
+        . Allows visualize content that is bigger than the available
+            screen space.
+        . Content can be dragged and moved around.
+        . This element forms the basis of Items that are designed to
+            show large numbers of child items, such as ListView and GridView
+        . Gives the ability to also set up scrollbars if you need them.
+        . Use the docs and improvise for the rest.
+
+  */
 
 import QtQuick
 import QtQuick.Controls

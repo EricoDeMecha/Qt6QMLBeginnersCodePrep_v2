@@ -1,6 +1,18 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+
+        . Exploring DelayButton
+            . Used to delay activation of a button
+            . Once the delay runs out , the button is activated
+            . The button doesn't process clicks until it is activated
+            . We can track the activation progress.
+
+        . Refer to the Qt 5 course when confused.
+
+  */
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls

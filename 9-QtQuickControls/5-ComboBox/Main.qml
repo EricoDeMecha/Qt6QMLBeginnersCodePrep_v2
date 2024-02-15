@@ -1,5 +1,17 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+        . Exploring ComboBox
+        . Non Editable Combobox
+            . Just feed the model property
+            . Know when an item is activated
+        . Editable combobox : We want to add items dynamically at run time
+            . We add new data when the item is accepted.(Return pressed)
+
+        . If confused, refer to the Qt 5 course for clarity.
+
+  */
 
 import QtQuick
 import QtQuick.Controls

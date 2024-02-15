@@ -1,6 +1,14 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
 
+/*
+        . Exploring SwipeView and PageIndicator
+
+            . We use them to allow the user to swipe through pages
+            . Use the docs and the Qt5 course to fill in the details.
+            . Improvise.
+  */
+
 import QtQuick
 import QtQuick.Controls
 

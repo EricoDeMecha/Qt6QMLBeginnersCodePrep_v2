@@ -1,5 +1,16 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+        . Exploring ProgressbAR
+            . The usual thing
+            . The styles show up bad on Windows11 by default
+                . We try Universal and Material to show how they look on
+                    mobile and embedded devices
+
+        . Improvise on the rest
+
+  */
 
 import QtQuick
 import QtQuick.Controls

@@ -1,5 +1,12 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+        . Using GroupBox to wrap around RadioButton and CheckBox
+        . Knowing when the checked state of a button changes
+        . The rest is intuitional
+
+  */
 
 import QtQuick
 import QtQuick.Controls

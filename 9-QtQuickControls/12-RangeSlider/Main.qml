@@ -1,5 +1,11 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+    . Exploring Range Slider
+    . Use the docs and improvise.
+
+  */
 
 import QtQuick
 import QtQuick.Controls
@@ -10,11 +16,9 @@ Window {
     height: 480
     title: qsTr("RangeSlider")
 
-    Row {
-        spacing: 40
-        width: parent.width
 
         RangeSlider {
+            anchors.centerIn: parent
             //orientation: Qt.Vertical
             from: 1
             to: 100
@@ -28,5 +32,4 @@ Window {
                 console.log("Second value changed to: " + second.value);
             }
         }
-    }
 }

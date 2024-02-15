@@ -1,5 +1,10 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+        . Using Page control together with tabBar
+        . Use the doc and improvise
+        . Use the Qt5 course as a reference if necessary.
+  */
 
 import QtQuick
 import QtQuick.Controls

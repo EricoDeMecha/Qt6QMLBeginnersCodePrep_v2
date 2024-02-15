@@ -1,5 +1,11 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+        Exploring the slider.
+        . Same thing as slider
+        . May be set this up as an exercise.
+  */
 
 import QtQuick
 import QtQuick.Controls
