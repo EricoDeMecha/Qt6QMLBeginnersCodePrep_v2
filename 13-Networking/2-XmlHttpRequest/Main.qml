@@ -1,5 +1,15 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+    . Using XMLHttpRequest to download data from the internet.
+    . You get data by calling the open method on yoUR XMLHttpRequest object
+    . You can either call open asynchronously (default) or synchronously by putting
+        in the 3rd bool parameter. See docs
+    . In this lecture we'll just go with the default : asynchronous
+    . Use the info you have and improvise.
+
+  */
 
 import QtQuick
 import QtQuick.Window
