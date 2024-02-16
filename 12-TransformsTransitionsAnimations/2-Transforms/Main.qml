@@ -1,6 +1,19 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+        . Exploring transforms
 
+            . Translation
+            . Rotation
+            . Scaling
+
+        . We also show transform origins
+
+        . Add rotation to the last blue rect just for fun in the end
+
+        . Use the info above and the Qt 5 course to improvise.
+
+  */
 import QtQuick
 
 Window {

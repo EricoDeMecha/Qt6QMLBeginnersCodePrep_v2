@@ -1,5 +1,11 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+        . An example to combine sequentialanimation and easing curves
+            to build something cool.
+
+        . Improvise.
+  */
 
 import QtQuick
 import QtQuick.Window

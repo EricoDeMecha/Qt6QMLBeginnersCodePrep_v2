@@ -1,5 +1,15 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+    . Exploring grouped animations
+        . Sequencialanimation
+        . ParallelAnimation
+
+     . Start without the easing
+     . Then show the easing.
+    . Improvise as you go
+  */
 
 import QtQuick
 import QtQuick.Window

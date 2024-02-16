@@ -1,5 +1,21 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+        . SpringAnimation
+
+        . Animates and oscillates around the traget value of the property just like
+            a spring oscillates around the final point.
+
+        . state that the spring and daming properties should be carefully chosen.
+        . There is some heavy math going on behind the scenes but values from the
+            docs example should be a good starting point to find what you like.
+
+        . Start off by showing your example
+
+        . Adapt the example from the docs
+
+  */
 
 
 import QtQuick

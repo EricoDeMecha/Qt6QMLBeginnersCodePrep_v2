@@ -1,5 +1,16 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+        . Exploring Behavior
+
+        . Specifying a default animation for a property change
+
+        . We specified an animation that'll run when the x position of the rectangle changes
+
+        . We trigger the change in the mouseArea click handler.
+
+        . Improvise.
+  */
 
 import QtQuick
 import QtQuick.Window
