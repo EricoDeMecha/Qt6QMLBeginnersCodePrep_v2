@@ -1,6 +1,11 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+        . Used to select folders
+        . Use the doc and improvise
 
+
+  */
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Dialogs

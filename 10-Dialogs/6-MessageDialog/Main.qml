@@ -1,5 +1,12 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+        . Exploring MessageDialog
+        . Allow to show prompt messages to users
+        . Use the doc and improvise.
+
+  */
 
 import QtQuick
 import QtQuick.Window
