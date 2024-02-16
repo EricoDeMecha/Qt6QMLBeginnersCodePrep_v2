@@ -1,5 +1,14 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+    . We don't want for the settings to be saved automatically
+    . We actively save them at a time and place we choose
+    . In this case, se save them when the window is destroyed
+    . Flow :
+        . 1. Don't use property aliases in settings objects
+        . 2. Read the data from the settings objects
+        . 3. Save the data when the window object is about to die.
+  */
 
 import QtQuick
 import QtQuick.Dialogs
