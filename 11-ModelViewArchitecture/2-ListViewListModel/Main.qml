@@ -1,5 +1,16 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+    . Exploring ListView and ListModel
+    . When you connect a delegate to a view with something like :
+            . delegate : delegateId
+       the delegate gets access to the attributes defined in the
+        model that the view is displaying.
+
+    . Start by using an external delegate
+    . Then use an inline one.
+
+  */
 
 import QtQuick
 import QtQuick.Window

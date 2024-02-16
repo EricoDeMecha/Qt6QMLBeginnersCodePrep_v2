@@ -1,5 +1,17 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+    . TableView is coupled with built-in TableModel component
+    . You need to add and anchor the HeaderViews and stuff in the needed data
+    . By default, HorizontalHeaderView displays header data from the sync view's model.
+        If you don't wish to use this model, you can assign a different model to the model property.
+        If you assign a model that is a QAbstractItemModel, its header data will be used.
+        Otherwise the data in the model will be used directly (for example, if you assign a model that is simply an array of strings).
+    . Start with a simple delegate
+    . Then move on to use delegatechooser
+    . Improvise for the rest.
+
+  */
 
 import QtQuick
 import QtQuick.Controls
@@ -15,6 +27,8 @@ ApplicationWindow {
         anchors.left: tableViewId.left
         anchors.top: parent.top
         syncView: tableViewId
+        //If you want to use your own headers, you can set up a model like this.
+        //model: ["One", "Two", "Three", "Four", "Five"]
 
     }
 

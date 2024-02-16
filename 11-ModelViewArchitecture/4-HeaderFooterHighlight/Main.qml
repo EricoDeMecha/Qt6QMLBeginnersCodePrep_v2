@@ -1,5 +1,15 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+
+    . Using header , hightlight and footer with ListView
+    . You just specify the respective rectangles.
+    . One catch : the hightlight shows up below the content by default here.
+        to make it show up on top, you increase its z index, which is what we do here.
+    . Improvise based on the info you have here
+    . Refer to the Qt5 course if necessary.
+
+  */
 
 import QtQuick
 import QtQuick.Window

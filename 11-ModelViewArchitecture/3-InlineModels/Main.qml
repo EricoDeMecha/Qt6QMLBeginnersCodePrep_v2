@@ -1,5 +1,13 @@
 // Copyright (c) Daniel Gakwaya.
 // SPDX-License-Identifier: MIT
+/*
+    . Exploring Inline Models
+    . You can specify a list of things that the model will display in a
+        square bracketted list.
+
+    . The delegate fetches what to display throught the modelData property.
+
+  */
 
 import QtQuick
 import QtQuick.Window
